@@ -2,8 +2,12 @@
   .container-fluid
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.nav.navbar-nav.navbar-right
-        li
-          = link_to "サインイン","#"
+        -if user_signed_in?
+          li
+            =link_to "サインアウト", destroy_user_session_path, method: "delete"
+        -else
+          li
+            =link_to "サインイン", new_user_session_path
         li.dropdown
           = link_to "Dropdown","#",class: "dropdown-toggle", :"data-toggle" => "dropdown", role: :button, :"aria-haspopup" => "true", :"aria-expanded" => "false"
           ul.dropdown-menu
