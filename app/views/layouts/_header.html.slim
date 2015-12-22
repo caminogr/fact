@@ -1,0 +1,9 @@
+.navbar.navbar-default
+  .container-fluid
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      ul.nav.navbar-nav.navbar-right
+        li
+          = link_to "サインイン","#"
+        li.dropdown
+          = link_to "Dropdown","#",class: "dropdown-toggle", :"data-toggle" => "dropdown", role: :button, :"aria-haspopup" => "true", :"aria-expanded" => "false"
+          ul.dropdown-menu
