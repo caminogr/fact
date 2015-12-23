@@ -7,6 +7,10 @@ h2
     = f.label :email
     br
     = f.email_field :email, autofocus: true
+  .field
+    = f.label :avatar
+    br
+    = f.file_field :avatar
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       | Currently waiting confirmation for: 
@@ -27,6 +31,14 @@ h2
       | (we need your current password to confirm your changes)
     br
     = f.password_field :current_password, autocomplete: "off"
+  .field
+    = f.label :job
+    br
+    = f.text_field :job
+  .field
+    = f.label :university
+    br
+    = f.text_field :university
   .actions
     = f.submit "Update"
 h3
