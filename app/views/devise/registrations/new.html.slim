@@ -15,6 +15,10 @@ h2
     br
     = f.email_field :email, autofocus: true
   .field
+    = f.label :avatar
+    br
+    = f.file_field :avatar
+  .field
     = f.label :password
     - if @minimum_password_length
       em
