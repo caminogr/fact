@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20151222141256) do
     t.string   "family_name",            limit: 255
     t.string   "first_name",             limit: 255
     t.string   "gender",                 limit: 255
-    t.string   "age",                    limit: 255
+    t.integer  "age",                    limit: 4
     t.string   "university",             limit: 255
     t.string   "job",                    limit: 255
     t.datetime "created_at",                                      null: false

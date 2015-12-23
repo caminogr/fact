@@ -22,7 +22,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :family_name
       t.string   :first_name
       t.string   :gender
-      t.string   :age
+      t.integer  :age
       t.string   :university
       t.string   :job
 
