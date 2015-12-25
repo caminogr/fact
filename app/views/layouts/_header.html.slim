@@ -9,6 +9,7 @@
         -else
           li
             = link_to "サインアウト", destroy_user_session_path, method: "delete"
+          li =link_to "集める", new_event_path
           li.dropdown
             = image_tag current_user.avatar, class: "dropdown-toggle round_img", :"data-toggle" => "dropdown", role: :button, :"aria-haspopup" => "true", :"aria-expanded" => "false"
             ul.dropdown-menu
