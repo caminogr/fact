@@ -37,7 +37,6 @@ class EventsController < ApplicationController
     @event.destroy
       redirect_to events_url, notice: 'Event was successfully destroyed.'
       head :no_content
-    end
   end
 
   private
@@ -46,6 +45,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params[:event]
+      params[:event].permit(:title, :sport,:fixed_number, :information)
     end
 end
