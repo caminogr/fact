@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222141256) do
+ActiveRecord::Schema.define(version: 20151225074047) do
+
+  create_table "events", force: :cascade do |t|
+    t.text     "title",        limit: 65535
+    t.string   "sport",        limit: 255
+    t.integer  "fixed_number", limit: 4
+    t.text     "information",  limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
