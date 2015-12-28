@@ -36,4 +36,10 @@ h1,h2,h3,h4,h5,h6,p {
 .jumbotron{
   background: image-url("futsal.JPG") no-repeat center;
   height: 550px;
+
+  h1{
+    position: relative;
+    top: 300px;
+    text-align: center;
+  }
 }
