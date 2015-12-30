@@ -12,7 +12,6 @@ h2
     = f.text_field :first_name
   .field
     = f.label :email
-    br
     = f.email_field :email, autofocus: true
   .field
     = f.label :avatar
@@ -48,6 +47,14 @@ h2
     = f.label :university
     br
     = f.text_field :university
+  .field
+    = f.label :interest
+    br
+    = f.text_field :interest
+  .field
+    = f.label :introduce
+    br
+    = f.text_area :introduce
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
