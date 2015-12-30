@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151230090353) do
+ActiveRecord::Schema.define(version: 20151230133733) do
 
   create_table "events", force: :cascade do |t|
     t.text     "title",        limit: 65535
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20151230090353) do
     t.text     "location",     limit: 65535
     t.text     "information",  limit: 65535
     t.datetime "datetime"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events_users", force: :cascade do |t|
+    t.integer  "event_id",   limit: 4
+    t.integer  "user_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,12 +58,5 @@ ActiveRecord::Schema.define(version: 20151230090353) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "users_envents", force: :cascade do |t|
-    t.integer  "users_id",   limit: 4
-    t.integer  "events_id",  limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end
