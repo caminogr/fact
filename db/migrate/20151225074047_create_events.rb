@@ -4,7 +4,10 @@ class CreateEvents < ActiveRecord::Migration
       t.text       :title
       t.string     :sport
       t.integer    :fixed_number
+      t.integer    :status
+      t.text       :location
       t.text       :information
+      t.datetime   :datetime
       t.timestamps
     end
   end

@@ -25,6 +25,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer  :age
       t.string   :university
       t.string   :job
+      t.text     :interest
+      t.text     :introduce
 
       ## Confirmable
       # t.string   :confirmation_token

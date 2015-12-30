@@ -1,22 +1,16 @@
 .jumbotron
   .container
+    h1
+      | さあ、動こう
+
 
 p#notice
   = notice
-h1
-  | Listing Events
-table
-  thead
-    tr
-      th[colspan="3"]
-  tbody
-    - @events.each do |event|
-      tr
-        td
-          = link_to 'Show', event
-        td
-          = link_to 'Edit', edit_event_path(event)
-        td
-          = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+ul.row
+  - @events.each do |event|
+    li.event_card.col-sm-4.col-md-3
+      = link_to 'Show', event
+      = link_to 'Edit', edit_event_path(event)
+      = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
 br
 = link_to 'New Event', new_event_path
