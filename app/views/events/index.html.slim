@@ -9,7 +9,9 @@ p#notice
 ul.row
   - @events.each do |event|
     li.event_card.col-sm-4.col-md-3
-      = link_to 'Show', event
+      = link_to event.title, event
+      = event.sport
+      = event.fixed_number
       = link_to 'Edit', edit_event_path(event)
       = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
 br

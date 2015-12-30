@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20151230090353) do
     t.text     "title",        limit: 65535
     t.string   "sport",        limit: 255
     t.integer  "fixed_number", limit: 4
-    t.integer  "status",       limit: 4
+    t.integer  "status",       limit: 4,     default: 0
     t.text     "location",     limit: 65535
     t.text     "information",  limit: 65535
     t.datetime "datetime"
