@@ -6,13 +6,16 @@
 
 p#notice
   = notice
-ul.row
-  - @events.each do |event|
-    li.event_card.col-sm-4.col-md-3
-      = link_to event.title, event
-      = event.sport
-      = event.fixed_number
-      = link_to 'Edit', edit_event_path(event)
-      = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+.event_card_list.container
+  ul.row.list-inline.page-container-responsive
+    - @events.each do |event|
+      li.event_card.col-sm-4.col-md-3
+        .thumbnail.clearfix
+          .event_card_img
+            = link_to image_tag(event.users.first.avatar, class: :round_img), user_path(current_user)
+          .event_card_contents
+            h4 = link_to event.title, event
+            p スポーツ: #{event.sport}
+            p 参加人数: #{event.users.count}/#{event.fixed_number}
 br
 = link_to 'New Event', new_event_path
