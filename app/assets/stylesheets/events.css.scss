@@ -1,9 +1,19 @@
-.navbar{
-  opacity: 0.8;
-  width :100%;
-}
+.event_card_list{
+  .event_card{
+    padding: 0 15px;
+  }
+  .thumbnail{
+    background-color: #FFFFFF;
+    padding: 0;
 
-.jumbotron {
-  background: image-url("futsal.JPG") no-repeat center;
-  height: 550px;
+    .event_card_img{
+      width: 30%;
+      float: left;
+      margin-top: 15px;
+    }
+    .event_card_contents{
+      width: 70%;
+      float: left;
+    }
+  }
 }
