@@ -5,6 +5,7 @@ h3 #{@event.title}
 p 企画者
 p #{@event.users.first.first_name}
 p #{@event.users.count}/#{@event.fixed_number}
+p スポーツ #{@event.sport}
 p 場所 #{@event.location}
 p #{simple_format(@event.information)}
 |参加者一覧
