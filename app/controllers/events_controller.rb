@@ -16,13 +16,13 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.create(event_params)
 
-    if @event.save
-      redirect_to @event, notice: 'Event was successfully created.'
-    else
-      render :new
-    end
+    # if @event.save
+       redirect_to @event, notice: 'Event was successfully created.'
+    # else
+    #   render :new
+    # end
   end
 
   def update
@@ -45,6 +45,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params[:event].permit(:title, :sport,:fixed_number, :information)
+      params[:event].permit(:id, :title, :sport, :location, :fixed_number, :information)
     end
 end
