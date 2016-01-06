@@ -1,0 +1,19 @@
+.event_card_list{
+  .event_card{
+    padding: 0 15px;
+  }
+  .thumbnail{
+    background-color: #FFFFFF;
+    padding: 0;
+
+    .event_card_img{
+      width: 30%;
+      float: left;
+      margin-top: 15px;
+    }
+    .event_card_contents{
+      width: 70%;
+      float: left;
+    }
+  }
+}
