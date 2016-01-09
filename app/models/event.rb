@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   has_many :events_users
   has_many :users, through: :events_users
+  has_many :comments
 
   acts_as_taggable_on :themes
 
