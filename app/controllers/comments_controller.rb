@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     current_user.comments.create(comment_params)
+    redirect_to event_path(params[:event_id])
   end
 
   private
