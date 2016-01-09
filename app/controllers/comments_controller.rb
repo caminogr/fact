@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 
   def destroy
     Comment.find(params[:id]).destroy
+    redirect_to event_path(params[:event_id])
   end
 
   private
