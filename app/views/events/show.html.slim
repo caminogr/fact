@@ -8,7 +8,10 @@ p #{@event.users.count}/#{@event.fixed_number}
 p スポーツ #{@event.sport}
 p 場所 #{@event.location}
 p #{simple_format(@event.information)}
+= render partial: "tags/theme_list", collection: @event.theme_list
+br
 |参加者一覧
+br
 = link_to 'Edit', edit_event_path(@event)
 |  | 
 = link_to 'Back', events_path
