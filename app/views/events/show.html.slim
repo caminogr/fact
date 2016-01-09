@@ -10,9 +10,10 @@ p 場所 #{@event.location}
 p #{simple_format(@event.information)}
 = render partial: "tags/theme_list", collection: @event.theme_list
 br
-|参加者一覧
+| 参加者一覧
 br
-|comment(#{@event.comments.count})
+| comment(#{@event.comments.count})
+= render partial: "comments/comment", collection: @event.comments
 = form_for [@event, @comment] do |f|
   = f.text_area :text
   = f.submit "SEND"
