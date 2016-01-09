@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :events
+  resources :events do
+    resources :comments, only: [:create, :destroy]
+  end
   devise_for :users
   resources :users, only: [:show]
   root 'events#index'

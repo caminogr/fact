@@ -10,8 +10,14 @@ p 場所 #{@event.location}
 p #{simple_format(@event.information)}
 = render partial: "tags/theme_list", collection: @event.theme_list
 br
-|参加者一覧
+| 参加者一覧
 br
+| comment(#{@event.comments.count})
+= render partial: "comments/comment", collection: @event.comments
+- if user_signed_in?
+  = form_for [@event, @comment] do |f|
+    = f.text_area :text
+    = f.submit "SEND"
 = link_to 'Edit', edit_event_path(@event)
 |  | 
 = link_to 'Back', events_path
