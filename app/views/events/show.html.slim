@@ -14,9 +14,10 @@ br
 br
 | comment(#{@event.comments.count})
 = render partial: "comments/comment", collection: @event.comments
-= form_for [@event, @comment] do |f|
-  = f.text_area :text
-  = f.submit "SEND"
+- if user_signed_in?
+  = form_for [@event, @comment] do |f|
+    = f.text_area :text
+    = f.submit "SEND"
 = link_to 'Edit', edit_event_path(@event)
 |  | 
 = link_to 'Back', events_path
