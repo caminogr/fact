@@ -17,5 +17,6 @@ p#notice
             h4 = link_to event.title, event
             p スポーツ: #{event.sport}
             p 参加人数: #{event.users.count}/#{event.fixed_number}
+            p = render partial: "tags/theme_list", collection: event.theme_list
 br
 = link_to 'New Event', new_event_path
