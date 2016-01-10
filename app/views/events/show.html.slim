@@ -5,6 +5,7 @@ h3 #{@event.title}
 p 企画者
 p #{@event.users.first.first_name}
 p #{@event.users.count}/#{@event.fixed_number}
+p = link_to @event.favorites_count, event_favorites_path(@event), method: "post"
 p スポーツ #{@event.sport}
 p 場所 #{@event.location}
 p #{simple_format(@event.information)}
