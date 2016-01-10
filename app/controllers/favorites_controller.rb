@@ -7,5 +7,6 @@ class FavoritesController < ApplicationController
 
   def destroy
     Favorite.find(params[:id]).destroy
+    redirect_to event_path(params[:event_id])
   end
 end
