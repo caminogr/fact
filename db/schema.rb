@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160109101839) do
+ActiveRecord::Schema.define(version: 20160110023134) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text",       limit: 65535
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 20160109101839) do
   end
 
   create_table "events_users", force: :cascade do |t|
+    t.integer  "event_id",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favorites", force: :cascade do |t|
     t.integer  "event_id",   limit: 4
     t.integer  "user_id",    limit: 4
     t.datetime "created_at"
