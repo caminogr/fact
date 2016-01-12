@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160112005107) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer  "user_id",         limit: 4
+    t.integer  "owner_id",        limit: 4
     t.string   "title",           limit: 255
     t.string   "sport",           limit: 255
     t.integer  "fixed_number",    limit: 4
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160112005107) do
     t.integer  "favorites_count", limit: 4,     default: 0
   end
 
-  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+  add_index "events", ["owner_id"], name: "index_events_on_owner_id", using: :btree
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "event_id",   limit: 4
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160112005107) do
     t.datetime "updated_at"
   end
 
-  create_table "participant", force: :cascade do |t|
+  create_table "participants", force: :cascade do |t|
     t.integer  "event_id",   limit: 4
     t.integer  "user_id",    limit: 4
     t.datetime "created_at"
