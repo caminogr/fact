@@ -22,17 +22,21 @@ ActiveRecord::Schema.define(version: 20160110031431) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.text     "title",           limit: 65535
+    t.integer  "user_id",         limit: 4
+    t.string   "title",           limit: 255
     t.string   "sport",           limit: 255
     t.integer  "fixed_number",    limit: 4
     t.integer  "status",          limit: 4,     default: 0
-    t.text     "location",        limit: 65535
+    t.string   "location",        limit: 255
     t.text     "information",     limit: 65535
-    t.datetime "datetime"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "favorites_count", limit: 4,     default: 0
   end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "events_users", force: :cascade do |t|
     t.integer  "event_id",   limit: 4

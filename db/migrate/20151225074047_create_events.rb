@@ -1,14 +1,18 @@
 class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
-      t.text       :title
+      t.integer    :user_id
+      t.string     :title
       t.string     :sport
       t.integer    :fixed_number
       t.integer    :status, default: 0
-      t.text       :location
+      t.string     :location
       t.text       :information
-      t.datetime   :datetime
+      t.datetime   :start_time
+      t.datetime   :end_time
       t.timestamps
     end
+
+    add_index :events, :user_id
   end
 end
