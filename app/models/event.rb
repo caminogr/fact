@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   has_many :events_users
-  has_many :users, through: :events_users
+  has_many :participated_users, through: :events_users, source: :user
   has_many :comments
   has_many :favorites
 
