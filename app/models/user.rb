@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :events
-  has_many :events_users
-  has_many :participate_events, through: :events_users, source: :event
+  has_many :participant
+  has_many :participate_events, through: :participant, source: :event
   has_many :comments
   has_many :favorites
 
