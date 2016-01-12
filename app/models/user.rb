@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :events
   has_many :events_users
   has_many :participate_events, through: :events_users, source: :event
   has_many :comments
