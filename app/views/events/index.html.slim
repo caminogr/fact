@@ -12,11 +12,12 @@ p#notice
       li.event_card.col-sm-4.col-md-3
         .thumbnail.clearfix
           .event_card_img
-            = link_to image_tag(@events.owner(event.id).avatar, class: :round_img), user_path(@events.owner(event.id))
+            = link_to image_tag(event.user.avatar, class: :round_img), user_path(event.user)
           .event_card_contents
             h4 = link_to event.title, event
             p スポーツ: #{event.sport}
-            p 参加人数: #{event.users.count}/#{event.fixed_number}
+            p 参加人数: #{event.participants.count}/#{event.fixed_number}
             p = render partial: "tags/theme_list", collection: event.theme_list
+
 br
 = link_to 'New Event', new_event_path
