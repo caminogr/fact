@@ -2,6 +2,7 @@ p#notice
   = notice
 
 h3 #{@event.title}
+= link_to "参加", event_participants_path(@event), method: "post"
 p 企画者
 p #{@event.user.first_name}
 p #{@event.participants.count}/#{@event.fixed_number}
