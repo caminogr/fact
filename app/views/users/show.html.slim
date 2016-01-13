@@ -1,2 +1,5 @@
 = link_to "favorite一覧", favorite_events_user_path(current_user)
 = link_to "企画一覧", user_path(current_user)
+.event_card_list.container
+  ul.row.list-inline.page-container-responsive
+    = render partial: "events/event", collection: @events
