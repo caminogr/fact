@@ -3,8 +3,8 @@ p#notice
 
 h3 #{@event.title}
 p 企画者
-p #{@event.users.first.first_name}
-p #{@event.users.count}/#{@event.fixed_number}
+p #{@event.user.first_name}
+p #{@event.participants.count}/#{@event.fixed_number}
 = render "favorites/favorite"
 p スポーツ #{@event.sport}
 p 場所 #{@event.location}
