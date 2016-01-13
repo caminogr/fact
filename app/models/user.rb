@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :participate_events, through: :participants, source: :event
   has_many :comments
   has_many :favorites
+  has_many :favorite_events, through: :favorites, source: :event
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

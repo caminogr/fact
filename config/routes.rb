@@ -4,7 +4,11 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
   end
   devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      get :favorite_events
+    end
+  end
   root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

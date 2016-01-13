@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   has_many :participated_users, through: :participants, source: :user
   has_many :comments
   has_many :favorites
+  has_many :favorited_users, through: :favorites, source: :user
 
   acts_as_taggable_on :themes
 
