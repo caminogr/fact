@@ -9,8 +9,6 @@ class Event < ActiveRecord::Base
 
   acts_as_taggable_on :themes
 
-  scope :owner, ->(id){ Event.find(id).users.first }
-
   validates :title,
             :sport,
             :fixed_number,
