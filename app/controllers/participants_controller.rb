@@ -6,5 +6,6 @@ class ParticipantsController < ApplicationController
 
   def destroy
     @paricipant = Participant.find(params[:id]).destroy
+    redirect_to event_path(params[:event_id])
   end
 end
