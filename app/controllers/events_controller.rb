@@ -15,6 +15,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @event.participants.build
   end
 
   def create
@@ -50,6 +51,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params[:event].permit(:title, :sport, :location, :fixed_number, :information, :theme_list)
+      params[:event].permit(:title, :sport, :location, :fixed_number, :information, :theme_list, participants_attributes: [:id, :event_id, :user_id])
     end
 end

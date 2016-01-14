@@ -7,6 +7,8 @@ class Event < ActiveRecord::Base
   has_many :favorites
   has_many :favorited_users, through: :favorites, source: :user
 
+  accepts_nested_attributes_for :participants
+
   acts_as_taggable_on :themes
 
   validates :title,
