@@ -1,0 +1,4 @@
+- if @participant
+  = link_to "参加をやめる",event_participant_path(@event, @participant), method: "delete"
+- else
+  = link_to "参加", event_participants_path(@event), method: "post"
