@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   def show
     @comment = Comment.new
     @favorite = current_user.favorites.find_by(event_id: @event)
+    @participant = current_user.participants.find_by(event_id: @event)
   end
 
   def new
