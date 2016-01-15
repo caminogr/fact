@@ -11,6 +11,8 @@ class Event < ActiveRecord::Base
 
   acts_as_taggable_on :themes
 
+  enum status: %i(not_yet expired)
+
   validates :title,
             :sport,
             :fixed_number,

@@ -1,7 +1,10 @@
-- if @participant
-  - if @event.owner_id == current_user.id
-    | 企画中
-  -else
-    = link_to "参加をやめる",event_participant_path(@event, @participant), method: "delete"
+- if @event.status == "not_yet"
+  - if @participant
+    - if @event.owner_id == current_user.id
+      | 企画中
+    -else
+      = link_to "参加をやめる",event_participant_path(@event, @participant), method: "delete"
+  - else
+    = link_to "参加", event_participants_path(@event), method: "post"
 - else
-  = link_to "参加", event_participants_path(@event), method: "post"
+  | この企画は終了しました
