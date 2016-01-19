@@ -1,4 +1,4 @@
--if @favorite
+- if @favorite
   = link_to @event.favorites_count, event_favorite_path(@event, @favorite), method: "delete"
--else
+- else
   = link_to @event.favorites_count, event_favorites_path(@event), method: "post"

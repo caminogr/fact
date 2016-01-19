@@ -2,6 +2,7 @@ p#notice
   = notice
 
 h3 #{@event.title}
+= render partial: "participants/participant"
 p 企画者
 p #{@event.user.first_name}
 p #{@event.participants.count}/#{@event.fixed_number}

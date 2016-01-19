@@ -9,11 +9,13 @@ class EventsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @favorite = current_user.favorites.find_by(event_id: @event)
+    @favorite = current_user.favorites.find_by(event_id: @event) if user_signed_in?
+    @participant = current_user.participants.find_by(event_id: @event) if user_signed_in?
   end
 
   def new
     @event = Event.new
+    @event.participants.build
   end
 
   def create
@@ -49,6 +51,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params[:event].permit(:title, :sport, :location, :fixed_number, :information, :theme_list)
+      params.require(:event).permit(:title, :sport, :location, :status, :start_time, :end_time, :fixed_number, :information, :deadline, :fee, :theme_list, participants_attributes: [:id, :event_id, :user_id])
     end
 end

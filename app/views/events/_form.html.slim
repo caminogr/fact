@@ -8,6 +8,8 @@
         - @event.errors.full_messages.each do |message|
           li
             = message
+  = f.fields_for :participants  do |pf|
+    = pf.hidden_field :user_id, value: current_user.id
   .field
     = f.label :タイトル
     br
@@ -21,9 +23,25 @@
     br
     = f.text_field :location
   .field
+    = f.label :スタート時間
+    br
+    = f.datetime_select :start_time
+  .field
+    = f.label :終了時間
+    br
+    = f.datetime_select :end_time
+  .field
+    = f.label :締め切り
+    br
+    = f.datetime_select :deadline
+  .field
     = f.label :最大人数
     br
     = f.text_field :fixed_number
+  .field
+    = f.label :料金
+    br
+    = f.text_field :fee
   .field
     = f.label :情報
     br

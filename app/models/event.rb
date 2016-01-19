@@ -7,9 +7,11 @@ class Event < ActiveRecord::Base
   has_many :favorites
   has_many :favorited_users, through: :favorites, source: :user
 
+  accepts_nested_attributes_for :participants
+
   acts_as_taggable_on :themes
 
-  scope :owner, ->(id){ Event.find(id).users.first }
+  enum status: %i(not_yet expired)
 
   validates :title,
             :sport,
