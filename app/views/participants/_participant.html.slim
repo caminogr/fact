@@ -7,6 +7,6 @@
   - else
     = link_to "参加", event_participants_path(@event), method: "post"
 - else
-  p この企画は終了しました
+  p この企画の募集は終了しました
   - if user_signed_in? && (@event.owner_id == current_user.id)
     = link_to "参加者を募集する", event_path(@event, :event => {status: "not_yet"}), method: "put"
