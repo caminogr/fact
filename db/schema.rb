@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20160121114711) do
     t.datetime "updated_at"
   end
 
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "following_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["following_id"], name: "index_relationships_on_following_id", using: :btree
+  add_index "relationships", ["user_id", "following_id"], name: "index_relationships_on_user_id_and_following_id", unique: true, using: :btree
+  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id", using: :btree
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4
     t.integer  "taggable_id",   limit: 4
@@ -73,17 +84,6 @@ ActiveRecord::Schema.define(version: 20160121114711) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
-
-  create_table "user_relationships", force: :cascade do |t|
-    t.integer  "user_id",      limit: 4
-    t.integer  "following_id", limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "user_relationships", ["following_id"], name: "index_user_relationships_on_following_id", using: :btree
-  add_index "user_relationships", ["user_id", "following_id"], name: "index_user_relationships_on_user_id_and_following_id", unique: true, using: :btree
-  add_index "user_relationships", ["user_id"], name: "index_user_relationships_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false
