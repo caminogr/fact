@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @events = @user.events
+    @following = current_user.active_relationships.find_by(following_id: @user)
   end
 
   private
