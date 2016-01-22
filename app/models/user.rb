@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   has_many :favorite_events, through: :favorites, source: :event
   has_many :active_relationships, class_name: "Relationship", dependent: :delete_all
   has_many :following_users, through: :active_relationships, source: :user
-  
+  has_many :passive_relationships, class_name: "Relationship", dependent: :delete_all
+  has_many :followers, through: :passive_relationships, source: :user
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
