@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   def favorite_events
-    @events = current_user.favorite_events
+    @user = User.find(params[:id])
+    @events = @user.favorite_events
     render :show
   end
 
   def show
-    @events = current_user.events
+    @user = User.find(params[:id])
+    @events = @user.events
   end
 end
