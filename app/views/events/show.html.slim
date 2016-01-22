@@ -4,7 +4,7 @@ p#notice
 h3 #{@event.title}
 = render partial: "participants/participant"
 p 企画者
-p #{@event.user.first_name}
+= link_to @event.user.first_name, user_path(@event.user)
 p #{@event.participants.count}/#{@event.fixed_number}
 = render "favorites/favorite"
 p スポーツ #{@event.sport}
