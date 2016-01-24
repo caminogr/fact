@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114082413) do
+ActiveRecord::Schema.define(version: 20160121114711) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text",       limit: 65535
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 20160114082413) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id", limit: 4
+    t.integer  "followed_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4

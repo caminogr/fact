@@ -1,0 +1,5 @@
+- unless current_user == @user
+  - if @following
+    = link_to "フォロー解除", user_relationship_path(@user, @following), method: "delete"
+  - else
+    = link_to "フォローする", user_relationships_path(@user), method: "post"

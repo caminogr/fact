@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   end
   devise_for :users
   resources :users, only: [:show] do
+    resources :relationships, only: [:create, :destroy] do
+      collection do
+        get :following
+        get :follower
+      end
+    end
     member do
       get :favorite_events
     end
