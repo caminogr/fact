@@ -17,6 +17,7 @@ Rails.application.routes.draw do
         get :follower
       end
     end
+    get '/invitationships/invited' => 'invitationships#invited'
     member do
       get :favorite_events
     end
