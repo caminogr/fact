@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
 
   has_many :active_invitationships, class_name: "Invitation", foreign_key: "inviter_id", dependent: :delete_all
-  has_many :invited_users, through: :active_invitationships, source: :invited
+  has_many :inviting, through: :active_invitationships, source: :invited
   has_many :passive_invitationships, class_name: "Invitation", foreign_key: "invited_id", dependent: :delete_all
   has_many :inviters, through: :passive_invitationships, source: :inviter
 
