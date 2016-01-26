@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
     resources :participants, only: [:create, :destroy]
-    resources :invitationships, only: [:create, :destroy]
+    resources :invitationships, only: [:create, :destroy] do
+      collection do
+        get :invitable
+      end
+    end
   end
   devise_for :users
   resources :users, only: [:show] do
