@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   has_many :active_invitationships, class_name: "Invitation", foreign_key: "inviter_id", dependent: :delete_all
   has_many :invited_users, through: :active_invitationships, source: :invited
-  has_many :passive_invitationships, class_name: "Invitationship", foreign_key: "invited_id", dependent: :delete_all
+  has_many :passive_invitationships, class_name: "Invitation", foreign_key: "invited_id", dependent: :delete_all
   has_many :inviters, through: :passive_invitationships, source: :inviter
 
   devise :database_authenticatable, :registerable,
