@@ -2,4 +2,4 @@
 br
 - @following_users.each do |following_user|
   = image_tag following_user.avatar, class: "round_img"
-  = link_to follow.first_name, user_path(following_user)
+  = link_to following_user.first_name, user_path(following_user)
