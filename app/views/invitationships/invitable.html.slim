@@ -1,2 +1,4 @@
 - @invitable_users.each do |follower|
   | #{follower.first_name}
+  br
+  = link_to "このイベントに招待",event_invitationships_path(@event, invited_id: follower.id), method: "post"
