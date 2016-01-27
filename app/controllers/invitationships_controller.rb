@@ -1,6 +1,7 @@
 class InvitationshipsController < ApplicationController
 
   before_action :set_event, only: [:invitable, :create]
+  before_action :are_you_owner?, only: [:invitable, :create]
 
   def invitable
     @invitable_users = @event.owner.followers
@@ -17,7 +18,14 @@ class InvitationshipsController < ApplicationController
   end
 
   private
+
   def set_event
     @event = Event.find(params[:event_id])
+  end
+
+  def are_you_owner?
+    unless current_user == @event.owner
+      redirect_to event_path(@event)
+    end
   end
 end
