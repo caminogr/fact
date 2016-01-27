@@ -1,6 +1,8 @@
 class InvitationshipsController < ApplicationController
+
+  before_action :set_event, only: [:invitable, :create]
+
   def invitable
-    @event = Event.find(params[:event_id])
     @invitable_users = @event.owner.followers
   end
 
@@ -12,5 +14,10 @@ class InvitationshipsController < ApplicationController
   def create
     current_user.active_invitationships.create(invited_id: params[:invited_id], event_id: params[:event_id])
     redirect_to action: :invitable
+  end
+
+  private
+  def set_event
+    @event = Event.find(params[:event_id])
   end
 end
