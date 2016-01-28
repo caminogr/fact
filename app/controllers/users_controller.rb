@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_event, only: [:favorite_events, :show]
-
-  def favorite_events
-    @events = @user.favorite_events
-    render :show
-  end
+  before_action :set_event, only: :show
 
   def show
     @events = @user.events
