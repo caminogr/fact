@@ -4,12 +4,10 @@ class CreateInvitationships < ActiveRecord::Migration
       t.integer     :inviter_id
       t.integer     :invited_id
       t.integer     :event_id
-      t.integer     :status
 
       t.timestamps
     end
     add_index :invitationships, :inviter_id
     add_index :invitationships, :invited_id
-    add_index :invitationships, [:inviter_id, :invited_id], unique: true
   end
 end
