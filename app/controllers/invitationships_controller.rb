@@ -4,7 +4,7 @@ class InvitationshipsController < ApplicationController
   before_action :are_you_owner?, only: [:invitable, :create]
 
   def invitable
-    @invitable_users = @event.owner.followers
+    @invitable_users = current_user.followers
   end
 
   def invited
