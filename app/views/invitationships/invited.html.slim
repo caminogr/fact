@@ -1,0 +1,3 @@
+- @invitationships.each do |invitationship|
+  = link_to invitationship.event.title, event_path(invitationship.event)
+  = link_to invitationship.inviter.first_name, user_path(invitationship.inviter)

@@ -1,0 +1,7 @@
+- @invitable_users.each do |invitable_user|
+  | #{invitable_user.first_name}
+  br
+  - unless already_invited?(invitable_user, @event)
+    = link_to "このイベントに招待",event_invitationships_path(@event, invited_id: invitable_user.id), method: "post"
+  - else
+    = link_to "招待を取り消す",event_invitationship_path(@event, invitable_user), method: "delete"

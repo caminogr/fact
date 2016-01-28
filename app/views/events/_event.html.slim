@@ -1,7 +1,7 @@
 li.event_card.col-sm-4.col-md-3
   .thumbnail.clearfix
     .event_card_img
-      = link_to image_tag(event.user.avatar, class: :round_img), user_path(event.user)
+      = link_to image_tag(event.owner.avatar, class: :round_img), user_path(event.owner)
     .event_card_contents
       h4 = link_to event.title, event
       p スポーツ: #{event.sport}
