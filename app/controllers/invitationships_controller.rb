@@ -1,6 +1,6 @@
 class InvitationshipsController < ApplicationController
 
-  before_action :set_event, only: [:invitable, :create]
+  before_action :set_event, only: [:invitable, :create, :destroy]
   before_action :are_you_owner?, only: [:invitable, :create]
 
   def invitable
@@ -15,6 +15,11 @@ class InvitationshipsController < ApplicationController
   def create
     current_user.active_invitationships.create(invited_id: params[:invited_id], event_id: params[:event_id])
     redirect_to action: :invitable
+  end
+
+  def destroy
+    current_user.active_invitationships.find_by(invited_id: params[:id], event_id: @event).destroy
+    redirect_to invitable_event_invitationships_path(@event)
   end
 
   private
