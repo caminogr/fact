@@ -16,7 +16,7 @@
   }
   .thumbnail{
     background-color: #FFFFFF;
-    padding: 15px 0 0 15px;
+    padding: 5px 0 0 10px;
 
     .event-card-user-img{
       float: left;
@@ -24,6 +24,18 @@
       width: 30px;
     }
   }
+}
+
+.category-border{
+  border: 1px solid #C73007;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.event-card-category{
+  font-size: 12px;
+  padding: 1px 4px;
 }
 
 .event-card-title{
