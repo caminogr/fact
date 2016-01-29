@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :events do
     resources :comments, only: [:create, :destroy]
-    resources :favorites, only: [:create, :destroy]
+    resources :favorites, only: [:index, :create, :destroy]
     resources :participants, only: [:create, :destroy]
     resources :invitationships, only: [:create, :destroy] do
       collection do
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
     get '/invitationships/invited' => 'invitationships#invited'
     member do
-      get :favorite_events
+      get '/favorite_events' => 'favorites#favorited_events'
     end
   end
   root 'events#index'
