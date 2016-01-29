@@ -73,6 +73,8 @@ GEM
       interception
     erubis (2.7.0)
     execjs (2.6.0)
+    font-awesome-rails (4.5.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hpricot (0.8.6)
@@ -191,6 +193,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   did_you_mean
+  font-awesome-rails
   html2slim
   jbuilder (~> 2.0)
   jquery-rails
