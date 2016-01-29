@@ -16,16 +16,17 @@
   }
   .thumbnail{
     background-color: #FFFFFF;
-    padding: 0;
+    padding: 15px 0 0 15px;
 
-    .event_card_img{
-      width: 30%;
+    .event-card-user-img{
       float: left;
-      margin-top: 15px;
-    }
-    .event_card_contents{
-      width: 70%;
-      float: left;
+      height: 30px;
+      width: 30px;
     }
   }
+}
+
+.event-card-title{
+  padding: 5px;
+  float: left;
 }
