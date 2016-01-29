@@ -2,17 +2,17 @@
   .container-fluid
     .navbar-brand = link_to "FACT", root_path
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
-      ul.nav.navbar-nav.navbar-right
+      ul.navbar-nav.navbar-right
         -unless user_signed_in?
           li
-            = link_to "サインイン", new_user_session_path
+            = link_to "サインイン", new_user_session_path, class: "navbar-content-text"
         -else
-          li
-            = link_to "サインアウト", destroy_user_session_path, method: "delete"
-          li =link_to "集める", new_event_path
-          li.dropdown
+          li =link_to "企画する", new_event_path, class: "navbar-content-text"
+          li.dropdown.navbar-content
             = image_tag current_user.avatar, class: "dropdown-toggle round_img", :"data-toggle" => "dropdown", role: :button, :"aria-haspopup" => "true", :"aria-expanded" => "false"
-            ul.dropdown-menu
+            ul.dropdown-menu.dropdown-menu-position
               li = link_to "マイページ", user_path(current_user)
               li = link_to "プロフィール編集", edit_user_registration_path(current_user)
-
+              li = link_to "お気に入りリスト", favorite_events_user_path(current_user)
+              li = link_to "お誘いリスト", user_invitationships_invited_path(current_user)
+              li = link_to "ログアウト", destroy_user_session_path, method: "delete"
