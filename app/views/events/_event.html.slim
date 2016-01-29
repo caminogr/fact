@@ -5,5 +5,8 @@ li.event_card.col-sm-4.col-md-3
     .event_card_contents
       h4 = link_to event.title, event
       p スポーツ: #{event.sport}
-      p 参加人数: #{event.participants.count}/#{event.fixed_number}
+      i.fa.fa-users
+        | #{event.participants.count}/#{event.fixed_number}
+      i.fa.fa-star
+        | #{event.favorites_count}
       p = render partial: "tags/theme_list", collection: event.theme_list
