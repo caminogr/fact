@@ -1,3 +1,14 @@
+.jumbotron{
+  background: image-url("futsal.JPG") no-repeat center;
+  height: 550px;
+
+  h1{
+    position: relative;
+    top: 300px;
+    text-align: center;
+  }
+}
+
 .event_card_list{
   .event_card{
     padding: 0 15px;
