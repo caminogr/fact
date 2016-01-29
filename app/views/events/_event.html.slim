@@ -6,8 +6,9 @@ li.event_card.col-sm-4.col-md-3
         = link_to image_tag(event.owner.avatar, class: "round_img event-card-user-img"), user_path(event.owner)
         h4.event-card-title
           = link_to event.title, event
-      i.fa.fa-users
-        | #{participation_condition(event)}
-      i.fa.fa-star
-        | #{event.favorites_count}
+      .event-icon-wrapper
+        i.fa.fa-users
+          |  #{participation_condition(event)}
+        i.fa.fa-star
+          |  #{event.favorites_count}
       p = render partial: "tags/theme_list", collection: event.theme_list
