@@ -11,5 +11,7 @@ li.event_card.col-sm-4.col-md-3
           |  #{participation_condition(event)}
         i.fa.fa-star
           |  #{event.favorites_count}
-      = l(event.start_time, format: :date)
-      p = render partial: "tags/theme_list", collection: event.theme_list
+      .event-date 
+        = l(event.start_time, format: :date)
+      .event-tags
+        = render partial: "tags/theme_list", collection: event.theme_list
