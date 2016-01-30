@@ -4,9 +4,9 @@
       = image_tag(@user.avatar, class: "img-big user-profile-img")
       .user-follow
         | #{@user.following_users.count}
-        = link_to " フォロー", following_user_relationships_path(@user)
+        = link_to " フォロー", following_user_relationships_path(@user), class: "user-follow-link"
         | #{@user.followers.count}
-        = link_to " フォロワー", follower_user_relationships_path(@user)
+        = link_to " フォロワー", follower_user_relationships_path(@user), class: "user-follow-link"
     .user-introduce-column.col-sm-8
       |メインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラム
   = link_to "招待されているイベント", user_invitationships_invited_path(@user)
