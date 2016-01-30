@@ -1,10 +1,14 @@
 .page-content
-  .user-profile
-    = image_tag(@user.avatar, class: "img-big user-img-radius")
-    | #{@user.following_users.count}
-    = link_to " フォロー", following_user_relationships_path(@user)
-    | #{@user.followers.count}
-    = link_to " フォロワー", follower_user_relationships_path(@user)
+  .user-profile.clearfix.row
+    .user-img-column.col-sm-4
+      = image_tag(@user.avatar, class: "img-big user-profile-img")
+      .user-follow
+        | #{@user.following_users.count}
+        = link_to " フォロー", following_user_relationships_path(@user)
+        | #{@user.followers.count}
+        = link_to " フォロワー", follower_user_relationships_path(@user)
+    .user-introduce-column.col-sm-8
+      |メインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラム
   = link_to "招待されているイベント", user_invitationships_invited_path(@user)
   br
   = render partial: "relationships/relationship"
