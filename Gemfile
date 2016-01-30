@@ -25,7 +25,7 @@ gem 'slim'
 gem 'devise'
 gem 'carrierwave'
 gem 'acts-as-taggable-on', '~> 3.4'
-
+gem 'font-awesome-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

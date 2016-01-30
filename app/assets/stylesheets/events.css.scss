@@ -1,3 +1,14 @@
+.jumbotron{
+  background: image-url("futsal.JPG") no-repeat center;
+  height: 550px;
+
+  .top-image-text{
+    position: relative;
+    top: 300px;
+    text-align: center;
+  }
+}
+
 .event_card_list{
   .event_card{
     padding: 0 15px;
@@ -5,16 +16,41 @@
   }
   .thumbnail{
     background-color: #FFFFFF;
-    padding: 0;
+    padding: 7px 0 7px 10px;
 
-    .event_card_img{
-      width: 30%;
+    .event-card-user-img{
       float: left;
-      margin-top: 15px;
-    }
-    .event_card_contents{
-      width: 70%;
-      float: left;
+      height: 30px;
+      width: 30px;
     }
   }
+}
+
+.category-border{
+  border: 1px solid #C73007;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.event-card-category{
+  font-size: 12px;
+  padding: 1px 4px;
+}
+
+.event-card-title{
+  padding: 5px;
+  float: left;
+}
+
+.event-icon-wrapper{
+  margin: 7px 0;
+
+  i{
+    margin-right: 10px;
+  }
+}
+
+.event-date{
+  margin: 0 0 7px;
 }

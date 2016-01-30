@@ -9,7 +9,7 @@
         -else
           li =link_to "企画する", new_event_path, class: "navbar-content-text"
           li.dropdown.navbar-content
-            = image_tag current_user.avatar, class: "dropdown-toggle round_img", :"data-toggle" => "dropdown", role: :button, :"aria-haspopup" => "true", :"aria-expanded" => "false"
+            = image_tag current_user.avatar, class: "dropdown-toggle round_img img-middle", :"data-toggle" => "dropdown", role: :button, :"aria-haspopup" => "true", :"aria-expanded" => "false"
             ul.dropdown-menu.dropdown-menu-position
               li = link_to "マイページ", user_path(current_user)
               li = link_to "プロフィール編集", edit_user_registration_path(current_user)

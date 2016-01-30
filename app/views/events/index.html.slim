@@ -1,6 +1,6 @@
 .jumbotron
   .container
-    h1
+    h1.top-image-text
       | さあ、動こう
 
 
@@ -9,6 +9,3 @@ p#notice
 .event_card_list.container
   ul.row.list-inline.page-container-responsive
     = render @events
-
-br
-= link_to 'New Event', new_event_path
