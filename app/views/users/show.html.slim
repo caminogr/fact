@@ -1,5 +1,5 @@
 .page-content
-  = image_tag(@user.avatar)
+  = image_tag(@user.avatar, class: "img-big")
   | #{@user.following_users.count}
   = link_to " フォロー", following_user_relationships_path(@user)
   | #{@user.followers.count}
