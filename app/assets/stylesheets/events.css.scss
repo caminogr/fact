@@ -16,7 +16,7 @@
   }
   .thumbnail{
     background-color: #FFFFFF;
-    padding: 5px 0 0 10px;
+    padding: 7px 0 7px 10px;
 
     .event-card-user-img{
       float: left;
@@ -49,4 +49,8 @@
   i{
     margin-right: 10px;
   }
+}
+
+.event-date{
+  margin: 0 0 7px;
 }
