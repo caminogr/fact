@@ -1,14 +1,15 @@
 .page-content
-  = image_tag(@user.avatar, class: "img-big")
-  | #{@user.following_users.count}
-  = link_to " フォロー", following_user_relationships_path(@user)
-  | #{@user.followers.count}
-  = link_to " フォロワー", follower_user_relationships_path(@user)
-= link_to "招待されているイベント", user_invitationships_invited_path(@user)
-br
-= render partial: "relationships/relationship"
-= link_to "favorite一覧", favorite_events_user_path(@user)
-= link_to "企画一覧", user_path(@user)
-.event_card_list.container
-  ul.row.list-inline.page-container-responsive
-    = render partial: "events/event", collection: @events
+  .user-profile
+    = image_tag(@user.avatar, class: "img-big user-img-radius")
+    | #{@user.following_users.count}
+    = link_to " フォロー", following_user_relationships_path(@user)
+    | #{@user.followers.count}
+    = link_to " フォロワー", follower_user_relationships_path(@user)
+  = link_to "招待されているイベント", user_invitationships_invited_path(@user)
+  br
+  = render partial: "relationships/relationship"
+  = link_to "favorite一覧", favorite_events_user_path(@user)
+  = link_to "企画一覧", user_path(@user)
+  .event_card_list.container
+    ul.row.list-inline.page-container-responsive
+      = render partial: "events/event", collection: @events
