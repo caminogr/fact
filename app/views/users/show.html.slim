@@ -2,6 +2,7 @@
   .user-profile.clearfix.row
     .user-img-column.col-sm-4
       = image_tag(@user.avatar, class: "img-big user-profile-img")
+      h3 #{@user.full_name}
       .user-follow
         | #{@user.following_users.count}
         = link_to " フォロー", following_user_relationships_path(@user), class: "user-follow-link"
