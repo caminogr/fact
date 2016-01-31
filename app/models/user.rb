@@ -26,4 +26,9 @@ class User < ActiveRecord::Base
             :gender,
             :age,
             presence: :true
+
+  def full_name
+    "#{family_name} #{first_name}"
+  end
+
 end
