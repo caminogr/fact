@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
   devise_for :users
+
   resources :users, only: [:show] do
     resources :relationships, only: [:create, :destroy] do
       collection do
@@ -22,6 +24,13 @@ Rails.application.routes.draw do
       get '/favorite_events' => 'favorites#favorited_events'
     end
   end
+
+  resources :groups, only: [:new, :create, :edit, :update] do
+    collection do
+      get :search
+    end
+  end
+
   root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
