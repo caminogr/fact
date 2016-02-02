@@ -32,7 +32,30 @@
 }
 
   .user-introduce{
-    min-height: 300px;
+     min-height: 300px;
+
+    h3{
+      padding: 15px 0 18px;
+    }
+
+    li{
+    list-style: none;
+    padding-bottom: 12px;
+    }
+
+    span{
+    font-weight: 600;
+     padding-right: 20px;
+    }
+
+    .self-introduction{
+      padding: 4px 0;
+    }
+}
+
+.profile-ul{
+  float: left;
+  width: 50%;
 }
 
 .event-background{

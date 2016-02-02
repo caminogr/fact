@@ -11,8 +11,30 @@
         br
         = render partial: "relationships/relationship"
     .user-main-column.col-sm-8
-      .user-introduce.event-background
-        |メインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラムメインカラム
+      ul.user-introduce.event-background
+        h3 プロフィール
+        .clearfix
+          .profile-ul
+            li
+              span 性別
+              | #{@user.gender}
+            li 
+              span 年齢
+              | #{@user.age}
+            li 
+              span 職業
+              | #{@user.job}
+          .profile-ul
+            li 
+              span 所属
+              | #{@user.organization}
+            li 
+              span 興味
+              | #{@user.interest}
+        li.self-introduction
+          span 自己紹介
+        | #{@user.introduce}
+
       .user-event
         ul.event-tab-list.event-background
           li
