@@ -30,3 +30,19 @@
 .user-main-column{
   padding-left: 0;
 }
+
+  .user-introduce{
+    min-height: 300px;
+}
+
+.event-tab-list{
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 10px 0 10px 5px;
+
+  list-style: none;
+    li{
+      display: inline;
+      padding: 0 15px;
+    }
+}
