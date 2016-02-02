@@ -1,13 +1,48 @@
-| #{@user.following_users.count}
-= link_to " フォロー", following_user_relationships_path(@user)
-| #{@user.followers.count}
-= link_to " フォロワー", follower_user_relationships_path(@user)
-br
-= link_to "招待されているイベント", user_invitationships_invited_path(@user)
-br
-= render partial: "relationships/relationship"
-= link_to "favorite一覧", favorite_events_user_path(@user)
-= link_to "企画一覧", user_path(@user)
-.event_card_list.container
-  ul.row.list-inline.page-container-responsive
-    = render partial: "events/event", collection: @events
+.page-content
+  .user-profile.clearfix.row
+    .user-img-column.col-sm-4
+      = image_tag(@user.avatar, class: "img-big user-profile-img")
+      h3 #{@user.full_name}
+      .user-follow
+        | #{@user.following_users.count}
+        = link_to " フォロー", following_user_relationships_path(@user), class: "user-follow-link"
+        | #{@user.followers.count}
+        = link_to " フォロワー", follower_user_relationships_path(@user), class: "user-follow-link"
+        br
+        = render partial: "relationships/relationship"
+    .user-main-column.col-sm-8
+      ul.user-introduce.event-background
+        h3 プロフィール
+        .clearfix
+          .profile-ul
+            li
+              span 性別
+              | #{@user.gender}
+            li 
+              span 年齢
+              | #{@user.age}
+            li 
+              span 職業
+              | #{@user.job}
+          .profile-ul
+            li 
+              span 所属
+              | #{@user.organization}
+            li 
+              span 興味
+              | #{@user.interest}
+        li.self-introduction
+          span 自己紹介
+        | #{@user.introduce}
+
+      .user-event
+        ul.event-tab-list.event-background
+          li
+            = link_to "企画一覧", user_path(@user)
+          li
+            = link_to "favorite一覧", favorite_events_user_path(@user)
+          li
+            = link_to "招待されているイベント", user_invitationships_invited_path(@user)
+        .event_card_list.container
+          ul.row.list-inline.page-container-responsive
+            = render partial: "events/event", collection: @events
