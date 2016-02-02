@@ -16,11 +16,11 @@
       .user-event
         ul.event-tab-list
           li
-            = link_to "招待されているイベント", user_invitationships_invited_path(@user)
+            = link_to "企画一覧", user_path(@user)
           li
             = link_to "favorite一覧", favorite_events_user_path(@user)
           li
-            = link_to "企画一覧", user_path(@user)
+            = link_to "招待されているイベント", user_invitationships_invited_path(@user)
         .event_card_list.container
           ul.row.list-inline.page-container-responsive
             = render partial: "events/event", collection: @events
