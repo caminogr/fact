@@ -28,6 +28,9 @@ var UserSearchBox = React.createClass({
     return(
       <div>
         <UserSearchForm />
+        <ul>
+          {userlist}
+        </ul>
       </div>
     );
   }
