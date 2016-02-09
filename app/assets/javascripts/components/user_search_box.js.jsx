@@ -9,7 +9,10 @@ var UserSearchBox = React.createClass({
   },
 
   handleClick: function(userId, userName) {
-
+    this.setState({
+      selectedUserId: this.state.selectedUserId.concat(userId),
+      selectedUserName: this.state.selectedUserName.concat(userName)
+    });
   },
 
 
