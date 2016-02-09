@@ -8,6 +8,10 @@ var UserSearchBox = React.createClass({
     };
   },
 
+  handleWriteDown: function(input){
+
+  },
+
   handleClick: function(userId, userName) {
     var filteredUser = this.state.filteredUser;
     this.setState({
@@ -27,7 +31,7 @@ var UserSearchBox = React.createClass({
 
     return(
       <div>
-        <UserSearchForm />
+        <UserSearchForm onChangeForm={this.handleWriteDown} />
         <ul>
           {userlist}
         </ul>
