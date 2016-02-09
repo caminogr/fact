@@ -11,7 +11,7 @@ var UserSearchBox = React.createClass({
   render: function(){
     var userlist = this.state.filteredUser.map(function(user){
 
-    return (<UserList/>);
-    };
+    return (<UserList key={user.id} user_id={user.id} name={user.first_name}/>);
+    });
   }
 });
