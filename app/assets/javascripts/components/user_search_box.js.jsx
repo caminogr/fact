@@ -9,7 +9,10 @@ var UserSearchBox = React.createClass({
   },
 
   handleWriteDown: function(input){
-
+    var result = this.props.users.filter(function(user){
+      if (user.first_name == input) return true;
+    });
+    this.setState({filteredUser: result})
   },
 
   handleClick: function(userId, userName) {
