@@ -9,10 +9,13 @@ var UserSearchBox = React.createClass({
   },
 
   handleClick: function(userId, userName) {
+    var filteredUser = this.state.filteredUser;
     this.setState({
       selectedUserId: this.state.selectedUserId.concat(userId),
       selectedUserName: this.state.selectedUserName.concat(userName)
     });
+    filteredUser.filter(function(user, i){
+      if (user.id == userId) filteredUser.splice(i,1);})
   },
 
 
