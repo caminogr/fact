@@ -11,7 +11,7 @@ var UserSearchForm = React.createClass({
     });
 
     return(
-      <form className="UserSearchForm"  >
+      <form className="UserSearchForm">
         <input type="text" ref="username" onKeyUp={this.handleWriteDown}/>
         {hiddenlist}
       </form>
