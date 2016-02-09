@@ -34,7 +34,10 @@ var UserSearchBox = React.createClass({
 
     return(
       <div>
-        <UserSearchForm onChangeForm={this.handleWriteDown} />
+        <div className="selectedUserName">
+          {this.state.selectedUserName}
+        </div>
+        <UserSearchForm selectedUserId={this.state.selectedUserId} onChangeForm={this.handleWriteDown} />
         <ul>
           {userlist}
         </ul>
