@@ -24,5 +24,11 @@ var UserSearchBox = React.createClass({
 
     return (<UserList key={user.id} user_id={user.id} name={user.first_name} onClickUser={this.handleClick}/>);
     }.bind(this));
+
+    return(
+      <div>
+        <UserSearchForm />
+      </div>
+    );
   }
 });
