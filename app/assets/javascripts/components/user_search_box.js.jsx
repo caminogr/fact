@@ -9,6 +9,9 @@ var UserSearchBox = React.createClass({
   },
 
   render: function(){
+    var userlist = this.state.filteredUser.map(function(user){
 
+    return (<UserList/>);
+    };
   }
 });
