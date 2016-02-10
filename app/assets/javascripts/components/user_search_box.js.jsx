@@ -24,16 +24,19 @@ var UserSearchBox = React.createClass({
     })
   },
 
-
   render: function(){
     var userlist = this.state.filteredUsers.map(function(filteredUser){
-    return (<UserList key={filteredUser.id} user={filteredUser} onClickUser={this.handleClick} />);
+      return (<UserList key={filteredUser.id} user={filteredUser} onClickUser={this.handleClick} />);
     }.bind(this));
+
+    var selecteduserlist = this.state.selectedUsers.map(function(selectedUser){
+       return (<SelectedUserList />);
+    });
 
     return(
       <div>
         <div className="selectedUsers">
-          {this.state.selectedUsers}
+          {selecteduserlist}
         </div>
         <UserSearchForm selectedUsers={this.state.selectedUsers} onChangeForm={this.handleWriteDown} />
         <ul>
