@@ -12,9 +12,10 @@ var UserSearchForm = React.createClass({
     });
 
     return(
-      <form className="UserSearchForm">
+      <form action="/groups" method="post" className="UserSearchForm">
         <input type="text" ref="username" onKeyUp={this.handleWriteDown}/>
         {hiddenlist}
+        <input type="submit" value="作成" />
       </form>
     );
   }
