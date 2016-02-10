@@ -24,14 +24,18 @@ var UserSearchBox = React.createClass({
     })
   },
 
+  handleClickRemoveUser: function(user){
+
+  },
+
   render: function(){
     var userlist = this.state.filteredUsers.map(function(filteredUser){
       return (<UserList key={filteredUser.id} user={filteredUser} onClickUser={this.handleClick} />);
     }.bind(this));
 
     var selecteduserlist = this.state.selectedUsers.map(function(selectedUser){
-       return (<SelectedUserList key={selectedUser.id} selectedUser={selectedUser} />);
-    });
+       return (<SelectedUserList key={selectedUser.id} selectedUser={selectedUser} onClickUser={this.handleClickRemoveUser} />);
+    }.bind(this));
 
     return(
       <div>
