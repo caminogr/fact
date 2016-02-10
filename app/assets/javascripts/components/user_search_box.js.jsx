@@ -25,7 +25,9 @@ var UserSearchBox = React.createClass({
   },
 
   handleClickRemoveUser: function(user){
-
+    this.setState({
+      filteredUsers: this.state.filteredUsers.concat(user)
+    });
   },
 
   render: function(){
