@@ -2,9 +2,8 @@ var UserSearchBox = React.createClass({
 
   getInitialState: function(props){
     return{
-      filteredUser: this.props.users,
-      selectedUserId: [],
-      selectedUserName: []
+      filteredUsers: this.props.users,
+      selectedUsers: []
     };
   },
 
@@ -12,32 +11,31 @@ var UserSearchBox = React.createClass({
     var result = this.props.users.filter(function(user){
       if (user.first_name == input) return true;
     });
-    this.setState({filteredUser: result})
+    this.setState({filteredUsers: result})
   },
 
-  handleClick: function(userId, userName) {
-    var filteredUser = this.state.filteredUser;
+  handleClick: function(user) {
+    var filteredUsers = this.state.filteredUsers;
     this.setState({
-      selectedUserId: this.state.selectedUserId.concat(userId),
-      selectedUserName: this.state.selectedUserName.concat(userName)
+      selectedUsers: this.state.selectedUsers.concat(user),
     });
-    filteredUser.filter(function(user, i){
-      if (user.id == userId) filteredUser.splice(i,1);})
+    filteredUsers.filter(function(filteredUser, i){
+      if (filteredUser.id == user.id) filteredUsers.splice(i,1);
+    })
   },
 
 
   render: function(){
-    var userlist = this.state.filteredUser.map(function(user){
-
-    return (<UserList key={user.id} user_id={user.id} name={user.first_name} onClickUser={this.handleClick} />);
+    var userlist = this.state.filteredUsers.map(function(filteredUser){
+    return (<UserList key={filteredUser.id} user={filteredUser} onClickUser={this.handleClick} />);
     }.bind(this));
 
     return(
       <div>
-        <div className="selectedUserName">
-          {this.state.selectedUserName}
+        <div className="selectedUsers">
+          {this.state.selectedUsers}
         </div>
-        <UserSearchForm selectedUserId={this.state.selectedUserId} onChangeForm={this.handleWriteDown} />
+        <UserSearchForm selectedUsers={this.state.selectedUsers} onChangeForm={this.handleWriteDown} />
         <ul>
           {userlist}
         </ul>

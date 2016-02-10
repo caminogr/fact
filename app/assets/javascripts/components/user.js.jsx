@@ -4,7 +4,7 @@ var User = React.createClass({
     return(
       <div className="User">
         <p>
-          {this.props.name}
+          {this.props.user.first_name}
         </p>
       </div>
     );
