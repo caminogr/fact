@@ -30,7 +30,7 @@ var UserSearchBox = React.createClass({
     }.bind(this));
 
     var selecteduserlist = this.state.selectedUsers.map(function(selectedUser){
-       return (<SelectedUserList />);
+       return (<SelectedUserList key={selectedUser.id} selectedUser={selectedUser} />);
     });
 
     return(

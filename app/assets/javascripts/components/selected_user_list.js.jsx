@@ -4,6 +4,7 @@ var SelectedUserList = React.createClass({
 
     return(
       <span className="SelectedUserList">
+        {this.props.selectedUser.first_name}
       </span>
     );
   }
