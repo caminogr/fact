@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :owner, class_name: "User", foreign_key: :owner_id
+  belongs_to :group
 
   has_many :participants
   has_many :participated_users, through: :participants, source: :user
