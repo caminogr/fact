@@ -9,7 +9,11 @@ class GroupsController < ApplicationController
   def create
     @users = User.all
     @group = Group.new(group_params)
-    render :new unless @group.save
+    if @group.save
+      redirect_to :root, notice: 'Group was successfully created.'
+    else
+      render :new
+    end
   end
 
   private
