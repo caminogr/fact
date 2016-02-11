@@ -25,11 +25,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :groups, only: [:show, :new, :create, :edit, :update] do
-    collection do
-      get :search
-    end
-  end
+  resources :groups, only: [:show, :new, :create, :edit, :update]
 
   root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
