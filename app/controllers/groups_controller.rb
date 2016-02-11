@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    @users = User.all
     @group = Group.new(group_params)
     render :new unless @group.save
   end
