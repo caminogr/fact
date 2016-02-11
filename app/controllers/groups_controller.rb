@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  skip_before_filter :verify_authenticity_token ,:only=>[:create]
+
   def new
     @group = Group.new
     @users = User.all
