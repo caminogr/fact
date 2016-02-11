@@ -8,13 +8,13 @@ var UserSearchForm = React.createClass({
   render: function(){
 
     var hiddenlist = this.props.selectedUsers.map(function(user){
-      return(<input key={user.id} type="hidden" name="user_id" value={user.id} />);
+      return(<input key={user.id} type="hidden" name="group[user_ids][]" value={user.id} />);
     });
 
     return(
       <form action="/groups" method="post" className="UserSearchForm">
         <label>グループ名</label>
-        <input type="text" name="name" />
+        <input type="text" name="group[name]" />
         <br/>
         <label>グループに追加する</label>
         <input type="text" ref="username" onKeyUp={this.handleWriteDown}/>
