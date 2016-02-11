@@ -11,10 +11,6 @@ class GroupsController < ApplicationController
     render :new unless @group.save
   end
 
-  def search
-    @users = User.where('family_name LIKE(?)', "%#{params[:keyword]}%")
-  end
-
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [])
