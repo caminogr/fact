@@ -3,12 +3,12 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @users = User.all
+    @users = current_user.followers
   end
 
   def create
-    @users = User.all
     @group = Group.new(group_params)
+    @users = current_user.followers
     if @group.save
       redirect_to :root, notice: 'Group was successfully created.'
     else
