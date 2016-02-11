@@ -7,6 +7,7 @@
           li
             = link_to "サインイン", new_user_session_path, class: "navbar-content-text"
         -else
+          li =link_to "グループを作る", new_group_path, class: "navbar-content-text"
           li =link_to "企画する", new_event_path, class: "navbar-content-text"
           li.dropdown.navbar-content
             = image_tag current_user.avatar, class: "dropdown-toggle round_img img-middle", :"data-toggle" => "dropdown", role: :button, :"aria-haspopup" => "true", :"aria-expanded" => "false"
