@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :groups, only: [:new, :create, :edit, :update] do
+  resources :groups, only: [:show, :new, :create, :edit, :update] do
     collection do
       get :search
     end
