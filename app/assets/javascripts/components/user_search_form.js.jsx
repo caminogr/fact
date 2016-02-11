@@ -17,7 +17,7 @@ var UserSearchForm = React.createClass({
         <input type="text" name="group[name]" />
         <br/>
         <label>グループに追加する</label>
-        <input type="text" ref="username" onKeyUp={this.handleWriteDown}/>
+        <input type="text" id="user_search_form" ref="username" onKeyUp={this.handleWriteDown} />
         {hiddenlist}
         <input type="submit" value="作成" />
       </form>
