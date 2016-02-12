@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: :show
+  before_action :not_group_member!, only: :show
   before_action :authenticate_user!, only: [:show, :new, :create]
   before_action :belongs_to_group?, only: :show
 
@@ -27,6 +28,10 @@ class GroupsController < ApplicationController
   private
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def not_group_member!
+    redirect_to :root unless belongs_to_group?
   end
 
   def belongs_to_group?
