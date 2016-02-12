@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :new, :create]
   skip_before_filter :verify_authenticity_token ,:only=>[:create]
+
   def show
     @group = Group.find(params[:id])
     @events = @group.events
