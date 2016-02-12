@@ -1,3 +1,6 @@
 = render partial: "group_user", collection: @group.users
 br
 = link_to "グループ内で企画する", new_event_path(group_id: @group)
+.event_card_list.container
+  ul.row.list-inline.page-container-responsive
+    = render @events
