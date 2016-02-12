@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130061758) do
+ActiveRecord::Schema.define(version: 20160211164941) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text",       limit: 65535
@@ -36,12 +36,26 @@ ActiveRecord::Schema.define(version: 20160130061758) do
     t.integer  "favorites_count", limit: 4,     default: 0
     t.datetime "deadline"
     t.string   "fee",             limit: 255
+    t.integer  "group_id",        limit: 4,     default: 0
   end
 
   add_index "events", ["owner_id"], name: "index_events_on_owner_id", using: :btree
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "event_id",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups_users", force: :cascade do |t|
+    t.integer  "group_id",   limit: 4
     t.integer  "user_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"

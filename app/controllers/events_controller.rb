@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all.newer
+    @events = Event.open.newer
   end
 
   def show
@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    @group_id = params[:group_id]
     @event = Event.new
     @event.participants.build
   end
@@ -51,6 +52,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :sport, :location, :status, :start_time, :end_time, :fixed_number, :information, :deadline, :fee, :theme_list, participants_attributes: [:id, :event_id, :user_id])
+      params.require(:event).permit(:title, :sport, :location, :status, :start_time, :end_time, :fixed_number, :information, :deadline, :fee, :theme_list, :group_id, participants_attributes: [:id, :event_id, :user_id])
     end
 end

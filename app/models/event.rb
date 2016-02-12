@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :owner, class_name: "User", foreign_key: :owner_id
+  belongs_to :group
 
   has_many :participants
   has_many :participated_users, through: :participants, source: :user
@@ -8,6 +9,7 @@ class Event < ActiveRecord::Base
   has_many :favorited_users, through: :favorites, source: :user
 
   scope :newer, -> {order(id: :desc)}
+  scope :open, ->{ where(group_id: 0)}
 
   accepts_nested_attributes_for :participants
 

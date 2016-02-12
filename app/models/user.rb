@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   has_many :passive_invitationships, class_name: "Invitationship", foreign_key: "invited_id", dependent: :delete_all
   has_many :inviters, through: :passive_invitationships, source: :inviter
 
+  has_many :groups_users
+  has_many :groups, through: :groups_users, source: :group
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
