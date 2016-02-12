@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: :show
   before_action :authenticate_user!, only: [:show, :new, :create]
+  before_action :belongs_to_group?, only: :show
 
   skip_before_filter :verify_authenticity_token ,:only=>[:create]
 
@@ -26,6 +27,10 @@ class GroupsController < ApplicationController
   private
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def belongs_to_group?
+    return true if @group.groups_users.find_by(user_id: current_user)
   end
 
   def group_params
