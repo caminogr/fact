@@ -1,9 +1,10 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: :show
   before_action :authenticate_user!, only: [:show, :new, :create]
+
   skip_before_filter :verify_authenticity_token ,:only=>[:create]
 
   def show
-    @group = Group.find(params[:id])
     @events = @group.events
   end
 
@@ -23,6 +24,10 @@ class GroupsController < ApplicationController
   end
 
   private
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
   def group_params
     params.require(:group).permit(:name, user_ids: [])
   end
