@@ -9,7 +9,7 @@ var UserSearchBox = React.createClass({
 
   handleWriteDown: function(input){
     var result = this.props.users.filter(function(user){
-      if (user.first_name == input) return true;
+      if (user.first_name.indexOf(input) == 0) return true;
     });
     this.setState({filteredUsers: result})
   },
