@@ -1,1 +1,3 @@
 = render partial: "group_user", collection: @group.users
+br
+= link_to "グループ内で企画する", new_event_path(group_id: @group)
