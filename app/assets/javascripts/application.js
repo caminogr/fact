@@ -19,3 +19,7 @@
 
 //= require bootstrap
 //= require_tree .
+
+    $(function(){
+    $("#datetimepicker").datepicker();
+    });
