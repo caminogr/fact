@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213142552) do
+ActiveRecord::Schema.define(version: 20160213161654) do
+
+  create_table "cities", force: :cascade do |t|
+    t.integer "prefecture_id", limit: 4
+    t.string  "name",          limit: 255
+    t.string  "name_kana",     limit: 255
+  end
+
+  add_index "cities", ["name"], name: "index_cities_on_name", using: :btree
+  add_index "cities", ["name_kana"], name: "index_cities_on_name_kana", using: :btree
 
   create_table "comments", force: :cascade do |t|
     t.text     "text",       limit: 65535
