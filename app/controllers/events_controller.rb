@@ -51,7 +51,12 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
 
-    def event_params
-      params.require(:event).permit(:title, :sport, :location, :status, :start_time, :end_time, :fixed_number, :information, :deadline, :fee, :theme_list, :group_id, participants_attributes: [:id, :event_id, :user_id])
-    end
+  def integrate_datetime(params)
+    params.require(:event)[:start_time] = params.require(:event)[:start_time]+" "+params[:event]["start_time_hour(4i)"]+":"+params[:event]["start_time_hour(5i)"]
+  end
+
+  def event_params
+    integrate_datetime(params)
+    params.require(:event).permit(:title, :sport, :location, :status, :start_time, :end_time, :fixed_number, :information, :deadline, :fee, :theme_list, :group_id, participants_attributes: [:id, :event_id, :user_id])
+  end
 end
