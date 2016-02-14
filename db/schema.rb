@@ -91,8 +91,9 @@ ActiveRecord::Schema.define(version: 20160214011239) do
   end
 
   create_table "prefectures", force: :cascade do |t|
-    t.string "name",      limit: 255
-    t.string "name_kana", limit: 255
+    t.integer "prefecture_id", limit: 4
+    t.string  "name",          limit: 255
+    t.string  "name_kana",     limit: 255
   end
 
   create_table "relationships", force: :cascade do |t|
