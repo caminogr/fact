@@ -24,10 +24,10 @@
     br
     = f.text_field :location
   .field
-    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, id: "PrefectureSelect"
+    = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "都道府県選択", id: "prefectureSelect"
     br
   .field
-    = f.collection_select :city_id, City.all, :id, :name, id: "citySelect"
+    = f.collection_select :city_id, City.all, :id, :name, {prompt: "市町村選択"}, {id: "citySelect"}
     br
   .field
     = f.label :スタート時間
