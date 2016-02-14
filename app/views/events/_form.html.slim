@@ -24,7 +24,10 @@
     br
     = f.text_field :location
   .field
-    = f.collection_select :prefecture_id, Prefecture.all,:id, :name
+    = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+    br
+  .field
+    = f.collection_select :city_id, City.all, :id, :name
     br
   .field
     = f.label :スタート時間
