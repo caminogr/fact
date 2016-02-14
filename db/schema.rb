@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213161654) do
+ActiveRecord::Schema.define(version: 20160214011239) do
 
   create_table "cities", force: :cascade do |t|
     t.integer "prefecture_id", limit: 4
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20160213161654) do
     t.datetime "deadline"
     t.string   "fee",             limit: 255
     t.integer  "group_id",        limit: 4,     default: 0
+    t.string   "prefecture_id",   limit: 255
+    t.string   "city_id",         limit: 255
   end
 
   add_index "events", ["owner_id"], name: "index_events_on_owner_id", using: :btree
