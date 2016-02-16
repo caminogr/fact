@@ -8,7 +8,10 @@
     var value = $('#prefectureSelect option:selected').val();
     $.ajax({
       type: "get",
-      url: "/events/new"
+      url: "/events/new",
+      data: {
+              prefecture_id: value
+            }
     });
   });
 });
