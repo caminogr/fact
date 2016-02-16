@@ -19,6 +19,9 @@
             $("<option>").val(city.id).text(city.name)
           );
         });
+      },
+      error: function(data){
+        alert("エラーがおきました")
       }
     });
   });
