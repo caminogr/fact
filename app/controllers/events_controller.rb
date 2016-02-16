@@ -17,6 +17,10 @@ class EventsController < ApplicationController
     @group_id = params[:group_id]
     @event = Event.new
     @event.participants.build
+    @cities = City.where(prefecture_id: params[:prefecture_id])
+    if request.xhr?
+      render json: {cities: @cities}
+    end
   end
 
   def create
@@ -57,6 +61,6 @@ class EventsController < ApplicationController
 
   def event_params
     integrate_datetime(params)
-    params.require(:event).permit(:title, :sport, :location, :status, :start_time, :end_time, :fixed_number, :information, :deadline, :fee, :theme_list, :group_id, participants_attributes: [:id, :event_id, :user_id])
+    params.require(:event).permit(:title, :sport, :location, :status, :start_time, :end_time, :fixed_number, :information, :deadline, :fee, :theme_list, :group_id, :prefecture_id, :city_id, participants_attributes: [:id, :event_id, :user_id])
   end
 end
