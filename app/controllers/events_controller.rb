@@ -18,6 +18,9 @@ class EventsController < ApplicationController
     @event = Event.new
     @event.participants.build
     @cities = City.where(prefecture_id: params[:prefecture_id])
+    if request.xhr?
+      render json: {cities: @cities}
+    end
   end
 
   def create
