@@ -17,6 +17,7 @@ class EventsController < ApplicationController
     @group_id = params[:group_id]
     @event = Event.new
     @event.participants.build
+    @cities = City.where(prefecture_id: params[:prefecture_id])
   end
 
   def create
