@@ -39,22 +39,5 @@ h2
     = f.label :age
     br
     = f.select :age, (18..100).map{|n| ["#{n}歳", n]}
-  .field
-    = f.label :job
-    br
-    = f.text_field :job
-  .field
-    = f.label :organization
-    br
-    = f.text_field :organization
-  .field
-    = f.label :interest
-    br
-    = f.text_field :interest
-  .field
-    = f.label :introduce
-    br
-    = f.text_area :introduce
   .actions
     = f.submit "Sign up"
-= render "devise/shared/links"
