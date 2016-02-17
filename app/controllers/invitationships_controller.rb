@@ -9,7 +9,8 @@ class InvitationshipsController < ApplicationController
 
   def invited
     @user = User.find(params[:user_id])
-    @invitationships = @user.passive_invitationships
+    @events = @user.invited_events
+    render action: "../users/show"
   end
 
   def create
