@@ -6,7 +6,6 @@
       h4.form-title
         | アカウント登録
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
         .field-set
           .field
             = f.text_field :family_name, placeholder: "姓", class: "form-field"
@@ -30,3 +29,4 @@
           = f.select :age, (18..100).map{|n| ["#{n}歳", n]}
         .actions
           = f.submit "登録", class: "form-button"
+= devise_error_messages!
