@@ -90,13 +90,14 @@
 .entrance-appearance{
   background-color: #fff;
   width: 300px;
-  padding: 0 15px 15px;
+  padding: 15px 15px 15px;
   margin-top: 60px;
 }
 
 .devise-page{
   .form-title{
     margin: 3px;
+    padding: 0 0 10px;
   }
 
   .field{
@@ -117,5 +118,22 @@
     &:hover{
     border-color: #3B99FC;
     }
+  }
+}
+.field-remember{
+
+  label{
+    font-size: 12px;
+    padding-left: 3px;
+  }
+}
+
+.field-link{
+  padding-top: 4px;
+  padding-left: 3px;
+
+  a{
+    font-size: 12px;
+
   }
 }
