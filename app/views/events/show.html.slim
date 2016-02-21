@@ -10,6 +10,8 @@
   .event-content.row
     .event-main-column.col-sm-8
       = render partial: "participants/participant"
+      p 時間
+      = l(@event.start_time, format: :short)
       p 場所 #{@event.location}
       -if @event.prefecture
         | #{@event.prefecture.name}
