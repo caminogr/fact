@@ -1,43 +1,52 @@
 .container
   p#notice
     = notice
-  .event-title
+  .event-title.border-radius
     h3 #{@event.title}
-    = render partial: "tags/theme_list", collection: @event.theme_list
-    p 企画者
+    .event-tags
+      = render partial: "tags/theme_list", collection: @event.theme_list
+    span.event-owner 主催者
     = link_to @event.owner.first_name, user_path(@event.owner)
 
   .event-content.row
-    .event-main-column.col-sm-8
-      = render partial: "participants/participant"
-      p 時間
-      = l(@event.start_time, format: :short)
-      p 場所 #{@event.location}
-      -if @event.prefecture
-        | #{@event.prefecture.name}
-      -if @event.city
-        | #{@event.city.name}
-
-      p #{simple_format(@event.information)}
-
-
-      br
-      | comment(#{@event.comments.count})
-      = render partial: "comments/comment", collection: @event.comments
-    .event-sub-column.col-sm-4
-      p #{participation_condition(@event)}
-      = render "favorites/favorite"
-      br
-      | 参加者一覧
-      br
-      - if invitable?(@event)
-        = link_to "招待する",invitable_event_invitationships_path(@event)
+    .col-sm-8
+      .event-main-column.border-radius
+        = render partial: "participants/participant"
+        .information-block
+          i.fa.fa-clock-o
+          = l(@event.start_time, format: :short)
+        .informatino-block
+          i.fa.fa-map-marker
+            span #{@event.location}
+            -if @event.prefecture
+              | #{@event.prefecture.name}
+            -if @event.city
+              | #{@event.city.name}
+        .information-block
+            | #{simple_format(@event.information, class: "event-information")}
 
 
-  - if user_signed_in?
-    = form_for [@event, @comment] do |f|
-      = f.text_area :text
-      = f.submit "SEND"
+        .information-block
+          | comment(#{@event.comments.count})
+          = render partial: "comments/comment", collection: @event.comments
+          - if user_signed_in?
+          = form_for [@event, @comment], html: {class: "clearfix"}do |f|
+            = f.text_area :text,class: "form-field comment-form"
+            = f.submit "投稿", class: "border-radius  button-position"
+    .col-sm-4
+      .event-sub-column.border-radius
+        i.fa.fa-users.fa-2x
+          | #{participation_condition(@event)}
+        i.fa.fa-star.fa-2x
+            = render "favorites/favorite"
+        .information-block
+          | 参加者一覧
+        .information-block
+          - if invitable?(@event)
+            = link_to "招待する",invitable_event_invitationships_path(@event)
+
+
+
   = link_to 'Edit', edit_event_path(@event)
   |  | 
   = link_to 'Back', events_path
