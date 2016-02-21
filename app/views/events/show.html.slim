@@ -10,7 +10,7 @@
 
   .event-content.row
     .col-sm-8
-      .event-main-column.border-radius
+      .event-column.border-radius
         = render partial: "participants/participant"
         .information-block
           i.fa.fa-clock-o
@@ -34,7 +34,7 @@
             = f.text_area :text,class: "form-field comment-form"
             = f.submit "投稿", class: "border-radius  button-position"
     .col-sm-4
-      .event-sub-column.border-radius
+      .event-column.border-radius
         i.fa.fa-users.fa-2x
           | #{participation_condition(@event)}
         i.fa.fa-star.fa-2x

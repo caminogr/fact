@@ -45,7 +45,6 @@
 
 .event-icon-wrapper{
   margin: 7px 0;
-
   i{
     margin-right: 10px;
   }
@@ -53,4 +52,23 @@
 
 .event-date{
   margin: 0 0 7px;
+}
+
+.event-title{
+  background-color: #fff;
+  margin-bottom: 18px;
+  padding: 0 0 10px 15px;
+}
+
+.event-column{
+  background-color: #fff;
+  padding: 15px;
+}
+
+.event-information{
+  word-break:break-all;
+}
+
+.information-block{
+  border-top: 1px solid #f2f2f2;
 }
