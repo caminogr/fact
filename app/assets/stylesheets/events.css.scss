@@ -43,6 +43,12 @@
   float: left;
 }
 
+.event-setting{
+  float: right;
+  padding:3px;
+  margin-right: 10px;
+}
+
 .event-icon-wrapper{
   margin: 7px 0;
   i{
@@ -60,6 +66,14 @@
   padding: 0 0 10px 15px;
 }
 
+.event-tags{
+  float: left;
+}
+
+.event-owner{
+  padding-right: 14px;
+}
+
 .event-column{
   background-color: #fff;
   padding: 15px;
@@ -71,4 +85,28 @@
 
 .information-block{
   border-top: 1px solid #f2f2f2;
+  padding: 8px;
 }
+
+.first-block{
+  border: none;
+}
+
+.event-button{
+  padding: 8px;
+  background-color: #C73007;
+  text-align: center;
+  width: 170px;
+
+  a{
+    color: #fff;
+  }
+}
+
+.event-content{
+  i{
+    padding-right: 14px;
+  }
+}
+
+

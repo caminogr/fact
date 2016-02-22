@@ -3,25 +3,27 @@
     = notice
   .event-title.border-radius
     h3 #{@event.title}
-    .event-tags
-      = render partial: "tags/theme_list", collection: @event.theme_list
-    span.event-owner 主催者
-    = link_to @event.owner.first_name, user_path(@event.owner)
+    .clearfix
+      .event-tags
+        = render partial: "tags/theme_list", collection: @event.theme_list
+      i.fa.fa-cog.event-setting.border-radius
 
   .event-content.row
     .col-sm-8
       .event-column.border-radius
-        = render partial: "participants/participant"
+        .information-block.first-block
+          span.event-owner 主催者
+          = link_to @event.owner.full_name, user_path(@event.owner),class: "event-owner"
         .information-block
           i.fa.fa-clock-o
           = l(@event.start_time, format: :short)
-        .informatino-block
+        .information-block
           i.fa.fa-map-marker
-            span #{@event.location}
-            -if @event.prefecture
-              | #{@event.prefecture.name}
-            -if @event.city
-              | #{@event.city.name}
+          span #{@event.location}
+          -if @event.prefecture
+            | #{@event.prefecture.name}
+          -if @event.city
+            | #{@event.city.name}
         .information-block
             | #{simple_format(@event.information, class: "event-information")}
 
@@ -35,10 +37,14 @@
             = f.submit "投稿", class: "border-radius  button-position"
     .col-sm-4
       .event-column.border-radius
-        i.fa.fa-users.fa-2x
-          | #{participation_condition(@event)}
-        i.fa.fa-star.fa-2x
-            = render "favorites/favorite"
+        .information-block.first-block
+          i.fa.fa-users.fa-2x
+            | #{participation_condition(@event)}
+          i.fa.fa-star.fa-2x
+              = render "favorites/favorite"
+        .information-block
+          .event-button.border-radius
+            = render partial: "participants/participant"
         .information-block
           | 参加者一覧
         .information-block
@@ -48,5 +54,3 @@
 
 
   = link_to 'Edit', edit_event_path(@event)
-  |  | 
-  = link_to 'Back', events_path
