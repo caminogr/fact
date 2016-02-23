@@ -34,6 +34,7 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @cities = City.where(prefecture_id: params[:prefecture_id])
   end
 
   def update
@@ -60,7 +61,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    integrate_datetime(params)
+    integrate_datetime(params) if params[:event][:start_time]
     params.require(:event).permit(:title, :sport, :location, :status, :start_time, :end_time, :fixed_number, :information, :deadline, :fee, :theme_list, :group_id, :prefecture_id, :city_id, participants_attributes: [:id, :event_id, :user_id])
   end
 end
