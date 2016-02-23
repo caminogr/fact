@@ -25,11 +25,13 @@
           = l(@event.start_time, format: :short)
         .information-block
           i.fa.fa-map-marker
-          span #{@event.location}
-          -if @event.prefecture
-            | #{@event.prefecture.name}
-          -if @event.city
-            | #{@event.city.name}
+          span.event-location #{@event.location}
+          span.event-prefecture
+            -if @event.prefecture
+              | #{@event.prefecture.name}
+          span.event-city
+            -if @event.city
+              | #{@event.city.name}
         .information-block
             | #{simple_format(@event.information, class: "event-information")}
 
@@ -56,7 +58,7 @@
           | 参加者一覧
           .participant-list
             = render partial: "participants/participant", collection: @event.participated_users
-        .information-block
-          - if invitable?(@event)
+        - if invitable?(@event)
+          .information-block
             = link_to "招待する",invitable_event_invitationships_path(@event)
 
