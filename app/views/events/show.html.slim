@@ -53,6 +53,8 @@
             = render partial: "participants/participate_button"
         .information-block
           | 参加者一覧
+          .participant-list
+            = render partial: "participants/participant", collection: @event.participated_users
         .information-block
           - if invitable?(@event)
             = link_to "招待する",invitable_event_invitationships_path(@event)
