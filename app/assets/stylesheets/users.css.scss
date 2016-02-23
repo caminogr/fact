@@ -82,18 +82,6 @@
   }
 }
 
-.entrance-border{
-  border-radius: 5px;
-  border: 1px solid #d8dee2;
-}
-
-.entrance-appearance{
-  background-color: #fff;
-  width: 300px;
-  padding: 15px 15px 15px;
-  margin-top: 60px;
-}
-
 .devise-page{
   .form-title{
     margin: 3px;
@@ -114,9 +102,9 @@
     }
   }
 
-  .border-radius{
-    &:hover{
-    border-color: #3B99FC;
+  .actions{
+    .border-radius:hover{
+      border-color: #3B99FC;
     }
   }
 }
