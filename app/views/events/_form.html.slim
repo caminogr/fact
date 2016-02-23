@@ -14,15 +14,15 @@
   .field
     = f.label :タイトル
     br
-    = f.text_field :title
+    = f.text_field :title, class: "form-field"
   .field
     = f.label :スポーツ
     br
-    = f.text_field :sport
+    = f.text_field :sport, class: "form-field"
   .field
     = f.label :場所
     br
-    = f.text_field :location
+    = f.text_field :location, class: "form-field"
   .field
     = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "都道府県選択"}, {id: "prefectureSelect"}
     br
@@ -32,23 +32,23 @@
   .field
     = f.label :スタート時間
     br
-    = f.text_field :start_time, id: :datetimepicker
+    = f.text_field :start_time, id: :datetimepicker, class: "form-field"
     = f.time_select :start_time_hour
   .field
     = f.label :最大人数
     br
-    = f.text_field :fixed_number
+    = f.text_field :fixed_number, class: "form-field"
   .field
     = f.label :料金
     br
-    = f.text_field :fee
+    = f.text_field :fee, class: "form-field"
   .field
     = f.label :情報
     br
-    = f.text_area :information
+    = f.text_area :information, class: "form-field"
   .field
     = f.label :テーマ
     br
-    = text_field_tag 'event[theme_list]', @event.theme_list.join(','), placeholder: "カンマ区切り"
+    = text_field_tag 'event[theme_list]', @event.theme_list.join(','), placeholder: "カンマ区切り", class: "form-field"
   .actions
-    = f.submit
+    = f.submit "作成", class: "border-radius"
