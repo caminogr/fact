@@ -65,6 +65,12 @@ a{
   border: 1px solid #ccc;
 }
 
+.actions{
+  .border-radius{
+    color: #fff;
+  }
+}
+
 .comment-form{
   width: 100%;
 }
@@ -78,5 +84,5 @@ a{
   background-color: #fff;
   width: 300px;
   padding: 15px 15px 15px;
-  margin-top: 60px;
+  margin: 60px auto 0;
 }

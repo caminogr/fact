@@ -60,8 +60,8 @@
   margin: 0 0 7px;
 }
 
-.event-location{
-  padding-right: 13px;
+.event-select{
+  padding: 1px 13px 0 0;
 }
 
 .event-prefecture{
@@ -132,5 +132,41 @@
 .event-content{
   i{
     padding-right: 14px;
+  }
+}
+
+.event-form{
+  width: 420px;
+  h4{
+    font-weight: 500;
+    padding: 10px 0 15px;
+    text-align: center;
+  }
+
+  table{
+    margin: 00 auto;
+  }
+
+  td{
+    padding: 0 0 12px;
+  }
+}
+
+.event-form-label{
+  width: 30%;
+  vertical-align: top;
+
+  label{
+    margin-right: 15px;
+    float: right;
+    font-weight: 100;
+  }
+}
+
+.event-form-field{
+  width: 70%;
+
+  .actions{
+    margin-top: 8px;
   }
 }
