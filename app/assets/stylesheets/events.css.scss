@@ -43,9 +43,14 @@
   float: left;
 }
 
+.event-setting{
+  float: right;
+  padding:3px;
+  margin-right: 10px;
+}
+
 .event-icon-wrapper{
   margin: 7px 0;
-
   i{
     margin-right: 10px;
   }
@@ -53,4 +58,79 @@
 
 .event-date{
   margin: 0 0 7px;
+}
+
+.event-location{
+  padding-right: 13px;
+}
+
+.event-prefecture{
+  padding-right: 5px;
+}
+
+.event-title{
+  background-color: #fff;
+  margin-bottom: 18px;
+  padding: 0 0 8px 15px;
+}
+
+.event-tags{
+  float: left;
+}
+
+.event-dropdown{
+  float: right;
+  margin-right: 8px;
+
+  .dropdown-menu{
+    left: auto;
+    right: 0;
+  }
+}
+
+.dropdown-menu{
+
+  min-width: auto;
+  li{
+    height: 26px;
+  }
+}
+
+.event-owner{
+  padding-right: 14px;
+}
+
+.event-column{
+  background-color: #fff;
+  padding: 15px;
+}
+
+.event-information{
+  word-break:break-all;
+}
+
+.information-block{
+  border-top: 1px solid #f2f2f2;
+  padding: 8px;
+}
+
+.first-block{
+  border: none;
+}
+
+.event-button{
+  padding: 8px;
+  background-color: #C73007;
+  text-align: center;
+  width: 170px;
+
+  a{
+    color: #fff;
+  }
+}
+
+.event-content{
+  i{
+    padding-right: 14px;
+  }
 }
