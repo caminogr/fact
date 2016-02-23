@@ -1,7 +1,7 @@
 .user-error-message
   = devise_error_messages!
 .devise-page
-  .container.entrance-border.entrance-appearance
+  .container.border-radius.panel-body
     h4.form-title
       | アカウント登録
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
