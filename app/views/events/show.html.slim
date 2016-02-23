@@ -6,7 +6,13 @@
     .clearfix
       .event-tags
         = render partial: "tags/theme_list", collection: @event.theme_list
-      i.fa.fa-cog.event-setting.border-radius
+      .dropdown.event-dropdown
+        button.btn-default.border-radius type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+          i.fa.fa-cog
+        ul.dropdown-menu aria-labelledby="dropdownMenu1"
+          li
+            = link_to '編集', edit_event_path(@event)
+
 
   .event-content.row
     .col-sm-8
@@ -51,6 +57,3 @@
           - if invitable?(@event)
             = link_to "招待する",invitable_event_invitationships_path(@event)
 
-
-
-  = link_to 'Edit', edit_event_path(@event)

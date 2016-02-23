@@ -63,11 +63,29 @@
 .event-title{
   background-color: #fff;
   margin-bottom: 18px;
-  padding: 0 0 10px 15px;
+  padding: 0 0 8px 15px;
 }
 
 .event-tags{
   float: left;
+}
+
+.event-dropdown{
+  float: right;
+  margin-right: 8px;
+
+  .dropdown-menu{
+    left: auto;
+    right: 0;
+  }
+}
+
+.dropdown-menu{
+  
+  min-width: auto;
+  li{
+    height: 26px;
+  }
 }
 
 .event-owner{
@@ -108,5 +126,3 @@
     padding-right: 14px;
   }
 }
-
-
