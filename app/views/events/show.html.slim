@@ -36,7 +36,8 @@
 
         .information-block
           | comment(#{@event.comments.count})
-          = render partial: "comments/comment", collection: @event.comments
+          .comment_list
+            = render partial: "comments/comment", collection: @event.comments
           - if user_signed_in?
           = form_for [@event, @comment], html: {class: "clearfix"}do |f|
             = f.text_area :text,class: "form-field comment-form"
