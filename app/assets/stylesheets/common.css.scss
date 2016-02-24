@@ -31,11 +31,18 @@ a{
   background-color: #fff;
 }
 
+.navbar-brand{
+  a{
+    line-height: 30px;
+  }
+}
+
 .navbar-nav{
   list-style: none;
 
   .navbar-content-text{
     line-height: 60px;
+    padding: 15px 0 15px 15px;
   }
   li{
     .dropdown-menu-position{
