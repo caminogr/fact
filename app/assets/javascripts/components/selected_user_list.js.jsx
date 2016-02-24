@@ -9,6 +9,7 @@ var SelectedUserList = React.createClass({
     return(
       <a href="#" className="SelectedUserList border-radius" onClick={this.handleClickRemoveUser}>
         {this.props.selectedUser.first_name}
+        <i className="fa fa-times"></i>
       </a>
     );
   }
