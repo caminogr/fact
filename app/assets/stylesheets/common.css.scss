@@ -86,3 +86,22 @@ a{
   padding: 15px 15px 15px;
   margin: 60px auto 0;
 }
+
+.form-label-cell{
+  width: 40%;
+  vertical-align: top;
+
+  label{
+    margin-right: 15px;
+    float: right;
+    font-weight: 100;
+  }
+}
+
+.form-field-cell{
+  width: 60%;
+
+  .actions{
+    margin-top: 8px;
+  }
+}

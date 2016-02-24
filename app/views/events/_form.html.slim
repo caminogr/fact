@@ -14,50 +14,50 @@
   table
     tbody
       tr
-        th.event-form-label
+        th.form-label-cell
           = f.label :タイトル
-        td.event-form-field
+        td.form-field-cell
           = f.text_field :title, class: "form-field"
       tr
-        th.event-form-label
+        th.form-label-cell
           = f.label :スポーツ
-        td.event-form-field
+        td.form-field-cell
           = f.text_field :sport, class: "form-field"
       tr
-        th.event-form-label
+        th.form-label-cell
           = f.label :場所
-        td.event-form-field
+        td.form-field-cell
           = f.text_field :location, class: "form-field"
           .event-select
             = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "都道府県選択"}, {id: "prefectureSelect"}
           .event-select
             = f.collection_select :city_id, @cities, :id, :name, {prompt: "市町村選択"}, {disabled: "disabled", id: "citySelect"}
       tr
-        th.event-form-label
+        th.form-label-cell
           = f.label :スタート時間
-        td.event-form-field
+        td.form-field-cell
           = f.text_field :start_time, id: :datetimepicker, class: "form-field"
           .event-select
             = f.time_select :start_time_hour
       tr
-        th.event-form-label
+        th.form-label-cell
           = f.label :最大人数
-        td.event-form-field
+        td.form-field-cell
           = f.text_field :fixed_number, class: "form-field"
       tr
-        th.event-form-label
+        th.form-label-cell
           = f.label :料金
-        td.event-form-field
+        td.form-field-cell
           = f.text_field :fee, class: "form-field"
       tr
-        th.event-form-label
+        th.form-label-cell
           = f.label :情報
-        td.event-form-field
+        td.form-field-cell
           = f.text_area :information, class: "form-field"
       tr
-        th.event-form-label
+        th.form-label-cell
           = f.label :テーマ
-        td.event-form-field
+        td.form-field-cell
           = text_field_tag 'event[theme_list]', @event.theme_list.join(','), placeholder: "カンマ区切り", class: "form-field"
           .actions
             = f.submit "作成", class: "border-radius"

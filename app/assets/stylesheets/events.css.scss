@@ -135,8 +135,7 @@
   }
 }
 
-.event-form{
-  width: 420px;
+.form-table{
   h4{
     font-weight: 500;
     padding: 10px 0 15px;
@@ -144,7 +143,7 @@
   }
 
   table{
-    margin: 00 auto;
+    margin: 0 auto;
   }
 
   td{
@@ -152,21 +151,6 @@
   }
 }
 
-.event-form-label{
-  width: 30%;
-  vertical-align: top;
-
-  label{
-    margin-right: 15px;
-    float: right;
-    font-weight: 100;
-  }
-}
-
-.event-form-field{
-  width: 70%;
-
-  .actions{
-    margin-top: 8px;
-  }
+.event-form{
+  width: 420px;
 }
