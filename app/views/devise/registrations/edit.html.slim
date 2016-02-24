@@ -1,65 +1,54 @@
 .user-error-message
   = devise_error_messages!
-.devise-page
-  .container.border-radius.panel-body.form-table
-    h4.form-title
-      | プロフィール編集
-    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-      table
-        tbody
-          tr
-            th.form-label-cell
-              = f.label :email
-            td.form-field-cell
-              = f.email_field :email, autofocus: true, class: "form-field"
-          tr
-            th.form-label-cell
-              = f.label :avatar
-            td.form-field-cell
-              = f.file_field :avatar
-            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-              div
-                | Currently waiting confirmation for: 
-                = resource.unconfirmed_email
-          tr
-            th.form-label-cell
-              = f.label :rcurrent_password
-              i
-                | (we need your current password to confirm your changes)
-            td.form-field-cell
-              = f.password_field :current_password, autocomplete: "off", class: "form-field"
-          tr
-            th.form-label-cell
-              = f.label :password
-              i
-                | (leave blank if you don't want to change it)
-            td.form-field-cell
-              = f.password_field :password, autocomplete: "off", class: "form-field"
-          tr
-            th.form-label-cell
-              = f.label :job
-            td.form-field-cell
-              = f.text_field :job
-          tr
-            th.form-label-cell
-              = f.label :organization
-            td.form-field-cell
-              = f.text_field :organization, class: "form-field"
-          tr
-            th.form-label-cell
-              = f.label :interest
-            td.form-field-cell
-              = f.text_field :interest, class: "form-field"
-          tr
-            th.form-label-cell
-              = f.label :introduce
-            td.form-field-cell
-              = f.text_area :introduce, class: "form-field"
-              .actions
-                = f.submit "Update", class: "border-radius"
-              h3
-                | Cancel my account
-              p
-                | Unhappy? 
-                = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-              = link_to "Back", :back
+.container.border-radius.panel-body.form-table.user-edit-form
+  h4.form-title
+    | プロフィール編集
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    table
+      tbody
+        tr
+          th.form-label-cell
+            = f.label :email
+          td.form-field-cell
+            = f.email_field :email, autofocus: true, class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "プロフィール画像"
+          td.form-field-cell
+            = f.file_field :avatar
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            div
+              | Currently waiting confirmation for: 
+              = resource.unconfirmed_email
+        tr
+          th.form-label-cell
+            = f.label "現在のパスワード"
+          td.form-field-cell
+            = f.password_field :current_password, autocomplete: "off", class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "変更後のパスワード"
+          td.form-field-cell
+            = f.password_field :password, autocomplete: "off", class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "職業"
+          td.form-field-cell
+            = f.text_field :job, class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "所属"
+          td.form-field-cell
+            = f.text_field :organization, class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "興味"
+          td.form-field-cell
+            = f.text_field :interest, class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "自己紹介"
+          td.form-field-cell
+            = f.text_area :introduce, class: "form-field"
+            .actions
+              = f.submit "更新", class: "border-radius"
