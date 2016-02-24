@@ -16,18 +16,18 @@ var UserSearchForm = React.createClass({
         <table>
           <tbody>
             <tr>
-              <th>
+              <th className="form-label-cell">
                 <label>グループ名</label>
               </th>
-              <td>
+              <td className="form-field-cell">
                 <input type="text" name="group[name]" className="form-field" />
               </td>
             </tr>
             <tr>
-              <th>
+              <th className="form-label-cell">
                 <label>メンバー</label>
               </th>
-              <td>
+              <td className="form-field-cell">
                 <div className="addUserField form-field">
                   <div className="selectedUsers">
                     {this.props.selecteduserlist}
