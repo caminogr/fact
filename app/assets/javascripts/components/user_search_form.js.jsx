@@ -38,7 +38,9 @@ var UserSearchForm = React.createClass({
                 <ul>
                   {this.props.userlist}
                 </ul>
-                <input type="submit" value="作成" />
+                <div className="actions">
+                  <input type="submit" value="作成" className="border-radius" />
+                </div>
               </td>
             </tr>
           </tbody>

@@ -1,0 +1,13 @@
+#user_search_form{
+  border: none;
+  margin: 5px;
+  &:focus{
+    outline: none;
+  }
+}
+
+.UserSearchForm{
+  li{
+    list-style: none;
+  }
+}
