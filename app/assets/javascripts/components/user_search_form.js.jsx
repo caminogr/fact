@@ -35,6 +35,9 @@ var UserSearchForm = React.createClass({
                   <input type="text" id="user_search_form" ref="username" onKeyUp={this.handleWriteDown} />
                 </div>
                 {hiddenlist}
+                <ul>
+                  {this.props.userlist}
+                </ul>
                 <input type="submit" value="作成" />
               </td>
             </tr>
