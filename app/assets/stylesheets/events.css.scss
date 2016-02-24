@@ -135,8 +135,7 @@
   }
 }
 
-.event-form{
-  width: 420px;
+.form-table{
   h4{
     font-weight: 500;
     padding: 10px 0 15px;
@@ -144,10 +143,14 @@
   }
 
   table{
-    margin: 00 auto;
+    margin: 0 auto;
   }
 
   td{
     padding: 0 0 12px;
   }
+}
+
+.event-form{
+  width: 420px;
 }
