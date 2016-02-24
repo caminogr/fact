@@ -1,59 +1,59 @@
 .user-error-message
   = devise_error_messages!
 .devise-page
-  .container.border-radius.panel-body
+  .container.border-radius.panel-body.form-table
     h4.form-title
       | プロフィール編集
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       table
         tbody
           tr
-            th.field
+            th.form-label-cell
               = f.label :email
-            td
+            td.form-field-cell
               = f.email_field :email, autofocus: true, class: "form-field"
           tr
-            th.field
+            th.form-label-cell
               = f.label :avatar
-            td
+            td.form-field-cell
               = f.file_field :avatar
             - if devise_mapping.confirmable? && resource.pending_reconfirmation?
               div
                 | Currently waiting confirmation for: 
                 = resource.unconfirmed_email
           tr
-            th
+            th.form-label-cell
               = f.label :rcurrent_password
               i
                 | (we need your current password to confirm your changes)
-            td
+            td.form-field-cell
               = f.password_field :current_password, autocomplete: "off", class: "form-field"
           tr
-            th
+            th.form-label-cell
               = f.label :password
               i
                 | (leave blank if you don't want to change it)
-            td
+            td.form-field-cell
               = f.password_field :password, autocomplete: "off", class: "form-field"
           tr
-            th
+            th.form-label-cell
               = f.label :job
-            td
+            td.form-field-cell
               = f.text_field :job
           tr
-            th
+            th.form-label-cell
               = f.label :organization
-            td
+            td.form-field-cell
               = f.text_field :organization, class: "form-field"
           tr
-            th
+            th.form-label-cell
               = f.label :interest
-            td
+            td.form-field-cell
               = f.text_field :interest, class: "form-field"
           tr
-            th
+            th.form-label-cell
               = f.label :introduce
-            td
+            td.form-field-cell
               = f.text_area :introduce, class: "form-field"
               .actions
                 = f.submit "Update", class: "border-radius"
