@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/search' => 'top#search'
+  resources :search, only: :index
 
   resources :events do
     resources :comments, only: [:create, :destroy]
