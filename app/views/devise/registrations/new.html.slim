@@ -1,60 +1,30 @@
-h2
-  | Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+.user-error-message
   = devise_error_messages!
-  .field
-    = f.label "Family Name"
-    br
-    = f.text_field :family_name
-  .field
-    = f.label "First Name"
-    br
-    = f.text_field :first_name
-  .field
-    = f.label :email
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :avatar
-    br
-    = f.file_field :avatar
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      em
-        | (
-        = @minimum_password_length
-        |  characters minimum)
-    br
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.radio_button :gender, :woman
-    | 女性
-    = f.radio_button :gender, :man
-    | 男性
-  .field
-    = f.label :age
-    br
-    = f.select :age, (18..100).map{|n| ["#{n}歳", n]}
-  .field
-    = f.label :job
-    br
-    = f.text_field :job
-  .field
-    = f.label :organization
-    br
-    = f.text_field :organization
-  .field
-    = f.label :interest
-    br
-    = f.text_field :interest
-  .field
-    = f.label :introduce
-    br
-    = f.text_area :introduce
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.devise-page
+  .container.border-radius.panel-body
+    h4.form-title
+      | アカウント登録
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .field-set
+        .field
+          = f.text_field :family_name, placeholder: "姓", class: "form-field"
+        .field
+          = f.text_field :first_name, placeholder: "名", class: "form-field"
+      .field-set
+        .field
+          = f.email_field :email, placeholder: "メールアドレス", autofocus: true, class: "form-field"
+        .field
+          = f.password_field :password, placeholder: "パスワード(最低8文字)", autocomplete: "off", class: "form-field"
+        .field
+          = f.password_field :password_confirmation, placeholder: "パスワード(確認用)", autocomplete: "off", class: "form-field"
+      .gender-field
+        .field
+          = f.radio_button :gender, :woman
+          | 女性
+        .field
+          = f.radio_button :gender, :man
+          | 男性
+      .field-set
+        = f.select :age, (18..100).map{|n| ["#{n}歳", n]}
+      .actions
+        = f.submit "登録", class: "border-radius"

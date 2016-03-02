@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :events, foreign_key: :owner_id
   has_many :participants
   has_many :participate_events, through: :participants, source: :event
+  has_many :invited_events, through: :passive_invitationships, source: :event
   has_many :comments
   has_many :favorites
   has_many :favorite_events, through: :favorites, source: :event

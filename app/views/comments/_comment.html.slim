@@ -1,3 +1,11 @@
-.comment_list
-  | #{comment.text}
-  = link_to "削除", event_comment_path(@event, comment), method: "delete"
+.event-comment.clearfix
+  .comment-user
+    = image_tag comment.user.avatar, class: "img-middle border-radius"
+  .comment-content
+    .comment-user-name
+      = link_to comment.user.full_name, user_path(comment.user)
+    span.comment-text
+      | #{comment.text}
+    - if current_user == comment.user
+      .comment-edit
+        = link_to "削除", event_comment_path(@event, comment), method: "delete"

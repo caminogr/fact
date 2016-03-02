@@ -1,32 +1,64 @@
-p#notice
-  = notice
+.container
+  p#notice
+    = notice
+  .event-title.border-radius
+    h3 #{@event.title}
+    .clearfix
+      .event-tags
+        = render partial: "tags/theme_list", collection: @event.theme_list
+      .dropdown.event-dropdown
+        button.btn-default.border-radius type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+          i.fa.fa-cog
+        ul.dropdown-menu aria-labelledby="dropdownMenu1"
+          li
+            = link_to '編集', edit_event_path(@event)
 
-h3 #{@event.title}
-= render partial: "participants/participant"
-br
-- if invitable?(@event)
-  = link_to "招待する",invitable_event_invitationships_path(@event)
-p 企画者
-= link_to @event.owner.first_name, user_path(@event.owner)
-p #{participation_condition(@event)}
-= render "favorites/favorite"
-p スポーツ #{@event.sport}
-p 場所 #{@event.location}
--if @event.prefecture
-  | #{@event.prefecture.name}
--if @event.city
-| #{@event.city.name}
-p #{simple_format(@event.information)}
-= render partial: "tags/theme_list", collection: @event.theme_list
-br
-| 参加者一覧
-br
-| comment(#{@event.comments.count})
-= render partial: "comments/comment", collection: @event.comments
-- if user_signed_in?
-  = form_for [@event, @comment] do |f|
-    = f.text_area :text
-    = f.submit "SEND"
-= link_to 'Edit', edit_event_path(@event)
-|  | 
-= link_to 'Back', events_path
+
+  .event-content.row
+    .col-sm-8
+      .event-column.border-radius
+        .information-block.first-block
+          span.event-owner 主催者
+          = link_to @event.owner.full_name, user_path(@event.owner),class: "event-owner"
+        .information-block
+          i.fa.fa-clock-o
+          = l(@event.start_time, format: :short)
+        .information-block
+          i.fa.fa-map-marker
+          span.event-location #{@event.location}
+          span.event-prefecture
+            -if @event.prefecture
+              | #{@event.prefecture.name}
+          span.event-city
+            -if @event.city
+              | #{@event.city.name}
+        .information-block
+            | #{simple_format(@event.information, class: "event-information")}
+
+
+        .information-block
+          | comment(#{@event.comments.count})
+          .comment_list
+            = render partial: "comments/comment", collection: @event.comments
+          - if user_signed_in?
+          = form_for [@event, @comment], html: {class: "clearfix"}do |f|
+            = f.text_area :text,class: "form-field comment-form"
+            = f.submit "投稿", class: "border-radius  button-position"
+    .col-sm-4
+      .event-column.border-radius
+        .information-block.first-block
+          i.fa.fa-users.fa-2x
+            | #{participation_condition(@event)}
+          i.fa.fa-star.fa-2x
+              = render "favorites/favorite"
+        .information-block
+          .event-button.border-radius
+            = render partial: "participants/participate_button"
+        .information-block
+          | 参加者一覧
+          .participant-list
+            = render partial: "participants/participant", collection: @event.participated_users
+        - if invitable?(@event)
+          .information-block
+            = link_to "招待する",invitable_event_invitationships_path(@event)
+

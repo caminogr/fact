@@ -1,57 +1,54 @@
-h2
-  | Edit 
-  = resource_name.to_s.humanize
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+.user-error-message
   = devise_error_messages!
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :avatar
-    br
-    = f.file_field :avatar
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    div
-      | Currently waiting confirmation for: 
-      = resource.unconfirmed_email
-  .field
-    = f.label :password
-    i
-      | (leave blank if you don't want to change it)
-    br
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.label :current_password
-    i
-      | (we need your current password to confirm your changes)
-    br
-    = f.password_field :current_password, autocomplete: "off"
-  .field
-    = f.label :job
-    br
-    = f.text_field :job
-  .field
-    = f.label :organization
-    br
-    = f.text_field :organization
-  .field
-    = f.label :interest
-    br
-    = f.text_field :interest
-  .field
-    = f.label :introduce
-    br
-    = f.text_area :introduce
-  .actions
-    = f.submit "Update"
-h3
-  | Cancel my account
-p
-  | Unhappy? 
-  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+.container.border-radius.panel-body.form-table.user-edit-form
+  h4.form-title
+    | プロフィール編集
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    table
+      tbody
+        tr
+          th.form-label-cell
+            = f.label :email
+          td.form-field-cell
+            = f.email_field :email, autofocus: true, class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "プロフィール画像"
+          td.form-field-cell
+            = f.file_field :avatar
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            div
+              | Currently waiting confirmation for: 
+              = resource.unconfirmed_email
+        tr
+          th.form-label-cell
+            = f.label "現在のパスワード"
+          td.form-field-cell
+            = f.password_field :current_password, autocomplete: "off", class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "変更後のパスワード"
+          td.form-field-cell
+            = f.password_field :password, autocomplete: "off", class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "職業"
+          td.form-field-cell
+            = f.text_field :job, class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "所属"
+          td.form-field-cell
+            = f.text_field :organization, class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "興味"
+          td.form-field-cell
+            = f.text_field :interest, class: "form-field"
+        tr
+          th.form-label-cell
+            = f.label "自己紹介"
+          td.form-field-cell
+            = f.text_area :introduce, class: "form-field"
+            .actions
+              = f.submit "更新", class: "border-radius"

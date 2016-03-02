@@ -1,0 +1,32 @@
+.event-comment{
+  padding: 5px 0;
+}
+
+.comment-user{
+  float: left;
+  padding-right: 7px;
+}
+
+.comment-content{
+  float: left;
+}
+
+.comment-user-name{
+  font-weight: 600;
+}
+
+.comment-edit{
+  margin-right: 8px;
+  padding-top: 3px;
+  a{
+    font-size: 13px;
+    color: #333;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+#new_comment{
+  padding-top: 10px;
+}

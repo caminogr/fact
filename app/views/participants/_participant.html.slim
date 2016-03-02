@@ -1,12 +1,1 @@
-- if @event.status == "not_yet"
-  - if @participant
-    - if @event.owner_id == current_user.id
-      = link_to "募集を締めきる", event_path(@event, event: {status: "expired"}), method: "put"
-    - else
-      = link_to "参加をやめる",event_participant_path(@event, @participant), method: "delete"
-  - else
-    = link_to "参加", event_participants_path(@event), method: "post"
-- else
-  p この企画の募集は終了しました
-  - if user_signed_in? && (@event.owner_id == current_user.id)
-    = link_to "参加者を募集する", event_path(@event, event: {status: "not_yet"}), method: "put"
+= image_tag participant.avatar, class: "img-middle border-radius", title: participant.full_name
