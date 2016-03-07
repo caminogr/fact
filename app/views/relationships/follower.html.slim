@@ -1,5 +1,5 @@
 | フォロワー
 br
 - @followers.each do |follower|
-  = image_tag follower.avatar, class: "round_img"
+  = image_tag follower.avatar, class: "round_img img-middle"
   = link_to follower.first_name, user_path(follower)
