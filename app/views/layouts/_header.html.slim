@@ -7,6 +7,9 @@
           li
             = link_to "サインイン", new_user_session_path, class: "navbar-content-text"
         -else
+          = form_tag '/search', method: "get"
+            input name="keyword"
+          li = link_to "検索する", search_index_path, class: "navbar-content-text"
           li =link_to "グループを作る", new_group_path, class: "navbar-content-text"
           li =link_to "企画する", new_event_path, class: "navbar-content-text"
           li.dropdown.navbar-content
