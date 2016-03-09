@@ -7,6 +7,8 @@
           li
             = link_to "サインイン", new_user_session_path, class: "navbar-content-text"
         -else
+          li = form_tag '/search', method: "get"
+            input name="keyword" placeholder= "アカウント名で検索" class= "header_search border-radius" id="header_search_box"
           li =link_to "グループを作る", new_group_path, class: "navbar-content-text"
           li =link_to "企画する", new_event_path, class: "navbar-content-text"
           li.dropdown.navbar-content

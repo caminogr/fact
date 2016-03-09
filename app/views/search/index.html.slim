@@ -1,0 +1,8 @@
+.page-title
+  h1 #{@word}の検索結果
+.event_card_list.container
+  ul.row.list-inline.page-container-responsive
+    = render partial: "users/user", collection: @users
+.empty-text
+  | #{@nil}
+

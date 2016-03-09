@@ -1,0 +1,15 @@
+li.event_card.col-sm-4.col-md-3
+  .thumbnail.clearfix
+    .event_card_content
+      .user-panel-header.clearfix
+        = image_tag user.avatar, class: "img-middle border-radius"
+        .user-panel-follow
+          = render partial: "relationships/relationship", locals: {:"@user" => user, :"@following" => find_relationship(user)}
+      .user-panel
+        = link_to user.full_name, user_path(user), class: "panel-user-name"
+        span.user-panel-text.
+          |@#{user.account_id}
+        span.user-panel-text.user-created-date
+          | joined
+          span
+            = l(user.created_at, format: :short_date)

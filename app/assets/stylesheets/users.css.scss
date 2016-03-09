@@ -128,3 +128,44 @@
 .user-edit-form{
   width: 450px;
 }
+
+.panel-user-name{
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.user-panel-header{
+  position: relative;
+}
+
+.user-panel-follow{
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-right: 10px;
+}
+
+.user-panel-text{
+  line-height: 18px;
+  padding-right: 15px;
+}
+
+.user-created-date{
+  font-size: 13px;
+  span{
+    padding-left: 5px;
+  }
+}
+
+.page-title{
+    color: #C73007;
+    text-align: center;
+    margin: 10px 0 25px;
+}
+
+.empty-text{
+  text-align: center;
+}
