@@ -12,8 +12,8 @@
             = link_to " フォロー", following_user_relationships_path(@user), class: "user-follow-link"
             | #{@user.followers.count}
             = link_to " フォロワー", follower_user_relationships_path(@user), class: "user-follow-link"
-            br
-            = render partial: "relationships/relationship"
+            .follow-button-position
+              = render partial: "relationships/relationship"
           .user-group
             | 所属しているグループ
             = render @user.groups
