@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
   end
 
   def not_group_member!
-    redirect_to :root unless belongs_to_group?
+    redirect_to :back unless belongs_to_group?
   end
 
   def belongs_to_group?
