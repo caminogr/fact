@@ -25,6 +25,14 @@ var UserSearchForm = React.createClass({
             </tr>
             <tr>
               <th className="form-label-cell">
+                <label>詳細</label>
+              </th>
+              <td className="form-field-cell">
+                <textarea name="group[detail]" className="form-field" />
+              </td>
+            </tr>
+            <tr>
+              <th className="form-label-cell">
                 <label>メンバー</label>
               </th>
               <td className="form-field-cell">
