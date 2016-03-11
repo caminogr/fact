@@ -1,5 +1,5 @@
 - unless current_user == @user
   - if @following
-    = link_to "フォロー中", user_relationship_path(@user, @following), method: "delete", class: "border-radius follow-button"
+    = link_to "フォロー中", user_relationship_path(@user, @following), method: "delete", class: "border-radius green-button"
   - else
-    = link_to "フォロー", user_relationships_path(@user), method: "post", class: "fa fa-user-plus border-radius follow-button"
+    = link_to "フォロー", user_relationships_path(@user), method: "post", class: "fa fa-user-plus border-radius green-button"
