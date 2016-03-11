@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20160310061313) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "detail",     limit: 65535
-    t.text     "image",      limit: 65535
+    t.string   "image",      limit: 255
   end
 
   create_table "groups_users", force: :cascade do |t|
