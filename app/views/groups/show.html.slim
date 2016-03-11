@@ -3,8 +3,8 @@
     .user-profile.clearfix.row
       .col-sm-4
         .wrap-image
-          = image_tag(@group.image, class: "img-big user-profile-img")
-          .post-image#display-none
+          = image_tag(@group.image, class: "img-big user-profile-img", id: "group-image")
+          .post-image
             .group-image-text グループ画像を編集
             = form_for(Group.new) do |f|
               = f.file_field :image
