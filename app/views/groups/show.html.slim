@@ -5,6 +5,7 @@
         .wrap-image
           = image_tag(@group.image, class: "img-big user-profile-img")
           .post-image#display-none
+            .group-image-text グループ画像を編集
             = form_for(Group.new) do |f|
               = f.file_field :image
         .user-sub-column-text
