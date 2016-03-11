@@ -1,5 +1,5 @@
 = form_for(@event) do |f|
-  = f.hidden_field :group_id, value: @group_id if @group
+  = f.hidden_field :group_id, value: @group_id if @group_id
   - if @event.errors.any?
     #error_explanation
       h2
