@@ -6,8 +6,10 @@
           = image_tag(@group.image, class: "img-big user-profile-img", id: "group-image")
           .post-image
             .group-image-text グループ画像を編集
-            = form_for(Group.new) do |f|
-              = f.file_field :image
+            = form_for(@group) do |f|
+              = f.file_field :image, class: "group-image-field"
+              .image-post-button
+                = f.submit :送信, class: "group-image-submit display-none"
         .user-sub-column-text
           h3 #{@group.name}
           .group-member

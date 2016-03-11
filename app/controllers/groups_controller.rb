@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: :show
+  before_action :set_group, only: [:show, :update]
   before_action :not_group_member!, only: :show
   before_action :authenticate_user!, only: [:show, :new, :create]
   before_action :belongs_to_group?, only: :show
@@ -25,6 +25,14 @@ class GroupsController < ApplicationController
     end
   end
 
+def update
+  if @group.update(group_params)
+    redirect_to @group, notice: 'Group was successfully updated.'
+  else
+    render :show
+  end
+end
+
   private
   def set_group
     @group = Group.find(params[:id])
@@ -39,6 +47,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :detail, user_ids: [])
+    params.require(:group).permit(:name, :detail, :image, user_ids: [])
   end
 end
