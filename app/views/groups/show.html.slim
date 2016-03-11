@@ -2,25 +2,29 @@
   .page-content
     .user-profile.clearfix.row
       .col-sm-4
-        = image_tag(@group.image, class: "img-big user-profile-img")
+        .wrap-image
+          = image_tag(@group.image, class: "img-big user-profile-img")
+          .post-image#post-image
+            = form_for(Group.new) do |f|
+              = f.file_field :image
         .user-sub-column-text
           h3 #{@group.name}
-          = link_to "グループ内で企画する", new_event_path(group_id: @group)
+          .group-member
+            = link_to "グループ内で企画する", new_event_path(group_id: @group),class: "border-radius green-button"
           .user-group
-          .information-block
             | 所属者一覧
             .participant-list
               = render partial: "participants/participant", collection: @group.users
       .user-main-column.col-sm-8
-        ul.user-introduce.event-background
+        ul.event-background.group-detail
           h3 詳細
           .clearfix
+            | #{@group.detail}
 
 
         .user-event
           ul.event-tab-list.event-background
-            li
-              = link_to "企画一覧", group_path(@group)
+            li 企画一覧
 
           .event_card_list.container
             ul.row.list-inline.page-container-responsive
