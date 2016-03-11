@@ -34,6 +34,7 @@ var UserSearchForm = React.createClass({
                   </div>
                   <input type="text" id="user_search_form" ref="username" onKeyUp={this.handleWriteDown} />
                 </div>
+                <input type="hidden" name="group[user_ids][]" value={this.props.current_user.id} />
                 {hiddenlist}
                 <ul>
                   {this.props.userlist}

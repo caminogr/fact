@@ -11,4 +11,4 @@
               = message
     h4.form_title
       | 新しいグループを作成
-    = react_component('UserSearchBox', { url: '/groups/new', users: @users }, { prerender: true })
+    = react_component('UserSearchBox', { url: '/groups/new', users: @users, current_user: current_user}, { prerender: true })
