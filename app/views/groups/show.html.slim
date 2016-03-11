@@ -4,7 +4,7 @@
       .col-sm-4
         .wrap-image
           = image_tag(@group.image, class: "img-big user-profile-img")
-          .post-image#post-image
+          .post-image#display-none
             = form_for(Group.new) do |f|
               = f.file_field :image
         .user-sub-column-text
