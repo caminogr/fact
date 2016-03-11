@@ -52,14 +52,15 @@
 .post-image{
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
-  height: 70px;
+  height: 25px;
   width: 230px;
-  top: 160px;
+  top: 205px;
   overflow: hidden;
 }
 
 #group_image{
   position: absolute;
+  top: 0;
   right: 0;
   font-size: 50px;
   &:focus{
@@ -67,13 +68,9 @@
   }
 }
 
-#display-none{
-  display: none;
-}
-
 .group-image-text{
   text-align: center;
   color: #fff;
-  font-size: 20px;
-  padding-top: 20px;
+  font-size: 15px;
+  padding-top: 2px;
 }
