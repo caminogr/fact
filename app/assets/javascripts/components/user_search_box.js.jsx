@@ -3,6 +3,7 @@ var UserSearchBox = React.createClass({
   getInitialState: function(props){
     return{
       filteredUsers: this.props.users,
+      current_user:  this.props.current_user,
       selectedUsers: []
     };
   },
@@ -45,7 +46,7 @@ var UserSearchBox = React.createClass({
 
     return(
       <div>
-        <UserSearchForm selectedUsers={this.state.selectedUsers} onChangeForm={this.handleWriteDown} selecteduserlist={selecteduserlist} userlist={userlist} />
+        <UserSearchForm selectedUsers={this.state.selectedUsers} current_user={this.state.current_user} onChangeForm={this.handleWriteDown} selecteduserlist={selecteduserlist} userlist={userlist} />
       </div>
     );
   }

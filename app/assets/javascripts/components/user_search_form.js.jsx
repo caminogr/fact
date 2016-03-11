@@ -25,6 +25,14 @@ var UserSearchForm = React.createClass({
             </tr>
             <tr>
               <th className="form-label-cell">
+                <label>詳細</label>
+              </th>
+              <td className="form-field-cell">
+                <textarea name="group[detail]" className="form-field" />
+              </td>
+            </tr>
+            <tr>
+              <th className="form-label-cell">
                 <label>メンバー</label>
               </th>
               <td className="form-field-cell">
@@ -34,6 +42,7 @@ var UserSearchForm = React.createClass({
                   </div>
                   <input type="text" id="user_search_form" ref="username" onKeyUp={this.handleWriteDown} />
                 </div>
+                <input type="hidden" name="group[user_ids][]" value={this.props.current_user.id} />
                 {hiddenlist}
                 <ul>
                   {this.props.userlist}

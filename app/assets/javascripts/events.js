@@ -1,8 +1,4 @@
- $(function(){
-    $("#datetimepicker").datepicker();
-    });
-
- $(document).on("ready",function(){
+ $(document).on("ready page:load",function(){
   $("#prefectureSelect").change(function(){
     $("#citySelect").removeAttr("disabled")
     var value = $('#prefectureSelect option:selected').val();
@@ -24,5 +20,9 @@
         alert("エラーがおきました")
       }
     });
+  });
+
+  $(function(){
+    $("#datetimepicker").datepicker();
   });
 });
