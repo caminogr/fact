@@ -36,3 +36,57 @@
   background-color: #ccc;
 }
 
+.group-detail{
+  padding-bottom: 10px;
+}
+
+.group-member{
+  padding: 10px 0 3px;
+}
+
+.wrap-image{
+  width: 230px;
+  margin: 0 auto;
+}
+
+.post-image{
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  height: 25px;
+  width: 230px;
+  top: 205px;
+  overflow: hidden;
+}
+
+#group_image{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 50px;
+  &:focus{
+    outline: none;
+  }
+}
+
+.group-image-text{
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  padding-top: 2px;
+}
+.image-post-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.group-image-submit{
+  border: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.display-none{
+  display: none;
+}
+

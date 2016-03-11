@@ -1,6 +1,34 @@
-= render partial: "group_user", collection: @group.users
-br
-= link_to "グループ内で企画する", new_event_path(group_id: @group)
-.event_card_list.container
-  ul.row.list-inline.page-container-responsive
-    = render @events
+.container
+  .page-content
+    .user-profile.clearfix.row
+      .col-sm-4
+        .wrap-image
+          = image_tag(@group.image, class: "img-big user-profile-img", id: "group-image")
+          .post-image
+            .group-image-text グループ画像を編集
+            = form_for(@group) do |f|
+              = f.file_field :image, class: "group-image-field"
+              .image-post-button
+                = f.submit :送信, class: "group-image-submit display-none"
+        .user-sub-column-text
+          h3 #{@group.name}
+          .group-member
+            = link_to "グループ内で企画する", new_event_path(group_id: @group),class: "border-radius green-button"
+          .user-group
+            | 所属者一覧
+            .participant-list
+              = render partial: "participants/participant", collection: @group.users
+      .user-main-column.col-sm-8
+        ul.event-background.group-detail
+          h3 詳細
+          .clearfix
+            | #{@group.detail}
+
+
+        .user-event
+          ul.event-tab-list.event-background
+            li 企画一覧
+
+          .event_card_list.container
+            ul.row.list-inline.page-container-responsive
+              = render partial: "events/event", collection: @group.events
