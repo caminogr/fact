@@ -1,4 +1,6 @@
 class RelationshipsController < ApplicationController
+  before_action :authenticate_user!, only: [:following, :follower]
+
   def following
     @user = User.find(params[:user_id])
     @following_users = @user.following_users
