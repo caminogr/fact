@@ -1,5 +1,7 @@
-| フォロワー
-br
-- @followers.each do |follower|
-  = image_tag follower.avatar, class: "round_img img-middle"
-  = link_to follower.first_name, user_path(follower)
+.page-title
+  h1 #{@user.full_name}のフォロワー一覧
+.event_card_list.container
+  ul.row.list-inline.page-container-responsive
+    = render partial: "users/user", collection: @followers
+.empty-text
+  | #{@nil}
