@@ -1,10 +1,14 @@
 class RelationshipsController < ApplicationController
   def following
-    @following_users = User.find(params[:user_id]).following_users
+    @user = User.find(params[:user_id])
+    @following_users = @user.following_users
+    @nil = "見つかりませんでした" if @following_users.empty?
   end
 
   def follower
-    @followers = User.find(params[:user_id]).followers
+    @user = User.find(params[:user_id])
+    @followers = @user.followers
+    @nil = "見つかりませんでした" if @followers.empty?
   end
 
   def create
