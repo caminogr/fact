@@ -1,5 +1,7 @@
-| フォロー
-br
-- @following_users.each do |following_user|
-  = image_tag following_user.avatar, class: "round_img img-middle"
-  = link_to following_user.first_name, user_path(following_user)
+.page-title
+  h1 #{@user.full_name}のフォロー一覧
+.event_card_list.container
+  ul.row.list-inline.page-container-responsive
+    = render partial: "users/user", collection: @following_users
+.empty-text
+  | #{@nil}
