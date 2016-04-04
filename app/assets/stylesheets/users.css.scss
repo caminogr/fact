@@ -95,6 +95,7 @@
   .form-title{
     margin: 3px;
     padding: 0 0 10px;
+    font-weight: 600;
   }
 
   .field{
@@ -105,17 +106,11 @@
     margin-bottom: 10px;
   }
 
-  .gender-field{
-    .field_with_errors{
-      display:inline;
-    }
-  }
-
   .actions{
     .border-radius{
-      background-color: #C73007;
+      background-color: $main--red;
       &:hover{
-        background-color: #DE5203;
+        background-color: #F73218;
       }
     }
   }
@@ -172,7 +167,7 @@
 }
 
 .page-title{
-    color: #C73007;
+    color: $main--red;
     text-align: center;
     margin: 10px 0 25px;
 }
