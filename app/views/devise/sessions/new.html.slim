@@ -1,7 +1,8 @@
 .devise-page
   .container.border-radius.panel-body
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      field-set
+      h4.form-title ログイン
+      .field-set
         .field
           = f.email_field :email, placeholder: "メールアドレス", autofocus: true, class: "form-field"
         .field
