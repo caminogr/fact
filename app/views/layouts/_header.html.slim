@@ -4,8 +4,9 @@
     .collapse.navbar-collapse#bs-example-navbar-collapse-1
       ul.navbar-nav.navbar-right
         -unless user_signed_in?
-          li
-            = link_to "サインイン", new_user_session_path, class: "navbar-content-text"
+          - unless devise_controller?
+            li
+              = link_to "サインイン", new_user_session_path, class: "navbar-content-text"
         -else
           li = form_tag '/search', method: "get"
             input name="keyword" placeholder= "アカウント名で検索" class= "header_search border-radius" id="header_search_box"
