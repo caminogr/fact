@@ -23,6 +23,10 @@ a{
   }
 }
 
+input:focus{
+  outline: none;
+}
+
 .navbar{
   height: 60px;
   margin: 0;
@@ -76,6 +80,9 @@ a{
 }
 
 .actions{
+  input{
+    width: 100%;
+  }
   .border-radius{
     color: #fff;
   }
@@ -119,4 +126,8 @@ a{
 .header_search{
   padding: 3px;
   margin-top: 15px;
+}
+
+.text-center{
+  text-align: center;
 }
