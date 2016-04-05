@@ -27,8 +27,6 @@ class User < ActiveRecord::Base
 
   validates :family_name,
             :first_name,
-            :gender,
-            :age,
             presence: :true
 
   def full_name

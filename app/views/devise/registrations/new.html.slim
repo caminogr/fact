@@ -1,32 +1,33 @@
-.user-error-message
-  = devise_error_messages!
 .devise-page
-  .container.border-radius.panel-body
+  .container.border-radius.panel-body.text-center
     h4.form-title
       | アカウント登録
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .user-error-message
+        = devise_error_messages!
       .field-set
+        .field-label
+          = f.label "姓"
         .field
-          = f.text_field :family_name, placeholder: "姓", class: "form-field"
+          = f.text_field :family_name, class: "form-field"
+        .field-label
+          = f.label "名"
         .field
-          = f.text_field :first_name, placeholder: "名", class: "form-field"
+          = f.text_field :first_name, class: "form-field"
+        .field-label
+          = f.label "アカウント名"
         .field
-          = f.text_field :account_id, placeholder: "アカウント名", class: "form-field"
+          = f.text_field :account_id, class: "form-field"
       .field-set
+        .field-label
+          = f.label "メールアドレス"
         .field
-          = f.email_field :email, placeholder: "メールアドレス", autofocus: true, class: "form-field"
+          = f.email_field :email, autofocus: true, class: "form-field"
+        .field-label
+          = f.label "パスワード（８文字以上）"
         .field
-          = f.password_field :password, placeholder: "パスワード(最低8文字)", autocomplete: "off", class: "form-field"
-        .field
-          = f.password_field :password_confirmation, placeholder: "パスワード(確認用)", autocomplete: "off", class: "form-field"
-      .gender-field
-        .field
-          = f.radio_button :gender, :woman
-          | 女性
-        .field
-          = f.radio_button :gender, :man
-          | 男性
-      .field-set
-        = f.select :age, (18..100).map{|n| ["#{n}歳", n]}
-      .actions
+          = f.password_field :password, autocomplete: "off", class: "form-field"
+      .actions.field-set
         = f.submit "登録", class: "border-radius"
+      small
+        = link_to "すでにアカウントを持っている方はこちら", new_user_session_path

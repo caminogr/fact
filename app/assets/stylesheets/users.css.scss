@@ -94,26 +94,24 @@
 .devise-page{
   .form-title{
     margin: 3px;
-    padding: 0 0 10px;
+    padding: 0;
+    font-weight: 600;
   }
 
   .field{
-    margin: 4px;
+    margin-bottom: 10px;
   }
 
   .field-set {
     margin-bottom: 10px;
   }
 
-  .gender-field{
-    .field_with_errors{
-      display:inline;
-    }
-  }
-
   .actions{
-    .border-radius:hover{
-      border-color: #3B99FC;
+    .border-radius{
+      background-color: $main--red;
+      &:hover{
+        background-color: #F73218;
+      }
     }
   }
 }
@@ -169,7 +167,7 @@
 }
 
 .page-title{
-    color: #C73007;
+    color: $main--red;
     text-align: center;
     margin: 10px 0 25px;
 }

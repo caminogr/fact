@@ -1,11 +1,16 @@
 .devise-page
-  .container.border-radius.panel-body
+  .container.border-radius.panel-body.text-center
+    h4.form-title ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      field-set
+      .field-set
+        .field-label
+          = f.label "メールアドレス"
         .field
-          = f.email_field :email, placeholder: "メールアドレス", autofocus: true, class: "form-field"
+          = f.email_field :email, autofocus: true, class: "form-field"
+        .field-label
+          = f.label "パスワード"
         .field
-          = f.password_field :password, placeholder: "パスワード", autocomplete: "off", class: "form-field"
+          = f.password_field :password, autocomplete: "off", class: "form-field"
         - if devise_mapping.rememberable?
           .field.field-remember
             = f.check_box :remember_me

@@ -39,7 +39,7 @@
 }
 
 .category-border{
-  border: 1px solid #C73007;
+  border: 1px solid $main--red;
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 10px;
@@ -132,7 +132,7 @@
 
 .event-button{
   padding: 8px;
-  background-color: #C73007;
+  background-color: $main--red;
   text-align: center;
   width: 170px;
 
