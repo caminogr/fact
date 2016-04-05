@@ -4,6 +4,8 @@ ja:
     password: パスワード
     group_id: グループ名
     user: ユーザー
+    family_name: 姓
+    first_name: 名
   date:
     abbr_day_names:
     - 日
