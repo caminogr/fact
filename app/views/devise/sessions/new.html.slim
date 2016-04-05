@@ -1,7 +1,7 @@
 .devise-page
   .container.border-radius.panel-body.text-center
+    h4.form-title ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      h4.form-title ログイン
       .field-set
         .field-label
           = f.label "メールアドレス"
