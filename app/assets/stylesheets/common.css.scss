@@ -132,6 +132,18 @@ input:focus{
   margin-top: 15px;
 }
 
+#error_explanation{
+  background-color: #FFEBE8;
+  margin-top: 8px;
+  h2{
+    padding: 0;
+  }
+  ul{
+    padding: 10px 0 10px 20px;
+    text-align: left;
+  }
+}
+
 .text-center{
   text-align: center;
 }
