@@ -17,16 +17,5 @@
           = f.email_field :email, placeholder: "メールアドレス", autofocus: true, class: "form-field"
         .field
           = f.password_field :password, placeholder: "パスワード(最低8文字)", autocomplete: "off", class: "form-field"
-        .field
-          = f.password_field :password_confirmation, placeholder: "パスワード(確認用)", autocomplete: "off", class: "form-field"
-      .gender-field
-        .field
-          = f.radio_button :gender, :woman
-          | 女性
-        .field
-          = f.radio_button :gender, :man
-          | 男性
-      .field-set
-        = f.select :age, (18..100).map{|n| ["#{n}歳", n]}
       .actions
         = f.submit "登録", class: "border-radius"
