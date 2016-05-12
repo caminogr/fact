@@ -147,3 +147,12 @@ input:focus{
 .text-center{
   text-align: center;
 }
+
+  .actions{
+    .border-radius{
+      background-color: $main--red;
+      &:hover{
+        background-color: #F73218;
+      }
+    }
+  }
